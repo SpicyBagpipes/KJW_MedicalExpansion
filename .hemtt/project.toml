@@ -1,0 +1,20 @@
+name = "KJW's Medical Expansion"
+prefix = "KJW_MedicalExpansion"
+author = "KJW"
+mainprefix = "x"
+
+[files]
+include = [
+    "mod.cpp",
+    "*.paa"
+]
+
+[version]
+git_hash = 0 # Disabled
+
+path = "addons/core/script_version.hpp" # Default
+
+major = 0 # Overrides path when set
+minor = 0
+patch = 1
+build = 1 # Optional
