@@ -7,6 +7,9 @@
 #### Q: What if I want to create a new module?
 *A:* Please refer to KJW or one of his minions before doing so. Modules must be properly planned with a wide feature set that is relevant to the module.
 
+#### Q: Do I need to cite sources?
+*A:* For obscure or difficult to verify facts, yes. Do not create functionality that is not evidenced by papers and/or **evidence** of real world incidents.
+
 ---
 
 ## Scripting Conventions
@@ -54,10 +57,10 @@ Wherever a relevant macro can be used, it must be. This is to both reduce the ri
 ### Filepath Macros
 | Macro | Result |
 |-------|--------|
-|PATHTOF(data\balls.paa)|\x\KJW_MedicalExpansion\addons\module\data\balls.paa|
-|QPATHTOF(data\balls.paa)|"\x\KJW_MedicalExpansion\addons\module\data\balls.paa"|
-|PATHTOEF(core,data\balls.paa)|\x\KJW_MedicalExpansion\addons\\**core**\data\balls.paa|
-|QPATHTOEF(core,data\balls.paa)|"\x\KJW_MedicalExpansion\addons\\**core**\data\balls.paa"|
+|PATHTOF(data\balls.paa)|\y\KJW_MedicalExpansion\addons\module\data\balls.paa|
+|QPATHTOF(data\balls.paa)|"\y\KJW_MedicalExpansion\addons\module\data\balls.paa"|
+|PATHTOEF(core,data\balls.paa)|\y\KJW_MedicalExpansion\addons\\**core**\data\balls.paa|
+|QPATHTOEF(core,data\balls.paa)|"\y\KJW_MedicalExpansion\addons\\**core**\data\balls.paa"|
 
 ---
 

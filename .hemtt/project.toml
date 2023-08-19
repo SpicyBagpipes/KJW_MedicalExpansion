@@ -1,7 +1,7 @@
 name = "KJW's Medical Expansion"
 prefix = "KJW_MedicalExpansion"
 author = "KJW"
-mainprefix = "x"
+mainprefix = "y"
 
 [files]
 include = [

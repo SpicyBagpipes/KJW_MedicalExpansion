@@ -1,8 +1,8 @@
 #define MOD_NAME KJW_MedicalExpansion
 #define MOD_NAME_BEAUTIFIED KJW's Medical Expansion
 #define COMPONENT_GENERAL MOD_NAME##_##COMPONENT
-#define COMPONENT_POSTINIT COMPONENT##_PostInit
-#define COMPONENT_PREINIT COMPONENT##_PreInit
+#define COMPONENT_POSTINIT COMPONENT_GENERAL##_PostInit
+#define COMPONENT_PREINIT COMPONENT_GENERAL##_PreInit
 
 #define QUOTE(P1) #P1
 #define QQUOTE(P1) QUOTE(QUOTE(P1))
@@ -23,10 +23,10 @@
 #define QEFUNC(P1,P2) QUOTE(EFUNC(P1,P2))
 #define QQEFUNC(P1,P2) QUOTE(QEFUNC(P1,P2))
 
-#define PATHTOF(P1) \x\##MOD_NAME##\addons\##COMPONENT##\##COMPONENT_GENERAL##\##P1
+#define PATHTOF(P1) \y\##MOD_NAME##\addons\##COMPONENT##\##P1
 #define QPATHTOF(P1) QUOTE(PATHTOF(P1))
 
-#define PATHTOEF(P1,P2) \x\##MOD_NAME##\addons\##P1##\##P2
+#define PATHTOEF(P1,P2) \y\##MOD_NAME##\addons\##P1##\##P2
 #define QPATHTOEF(P1,P2) QUOTE(EPATHTOF(P1,P2))
 
 //#define MACRO_FUNCPATH(FUNCNAME) COMPONENT##\functions\fnc_##FUNCNAME
@@ -35,3 +35,5 @@
 				file = QPATHTOF(functions\fnc_##FUNCTIONNAME##.sqf);\
             };
 //file = QUOTE(MACRO_FUNCPATH(FUNCTIONNAME).sqf);
+
+#define PREP(FUNCTIONNAME) COMPONENT_GENERAL##_fnc_##FUNCTIONNAME = compile preProcessFileLineNumbers '\y\##MOD_NAME##\addons\##COMPONENT##\functions\fnc_##FUNCTIONNAME##.sqf';

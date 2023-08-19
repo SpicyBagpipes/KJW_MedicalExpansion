@@ -1,8 +1,7 @@
-#include "script_component.hpp"
 /*
  *  Author: KJW
  * 
- *  Function description
+ *  Handles preinit
  * 
  *  Arguments:
  *  None
@@ -11,8 +10,10 @@
  *  None
  * 
  *  Example:
- *  call KJW_MedicalExpansion_XEH_PreInit
+ *  call KJW_MedicalExpansion_Core_XEH_PreInit
  * 
  *  Public: No
  */
 
+
+#include "XEH_PREP.sqf";

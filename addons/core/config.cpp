@@ -19,22 +19,37 @@ class CfgPatches {
 
 //https://trello.com/b/xH9BBZsd/kjws-medical-expansion
 
-class CfgFunctions {
-    class KJW_MedicalExpansion_Core {
-        class functions {
-            
-        };
-    };
-};
-
 class Extended_PostInit_EventHandlers {
 	class COMPONENT_POSTINIT {
-		init = QUOTE(call compileScript ['COMPONENT\XEH_PostInit.sqf']);
+		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PostInit.sqf']";
 	};
 };
 
 class Extended_PreInit_EventHandlers {
 	class COMPONENT_PREINIT {
-		init = QUOTE(call compileScript ['COMPONENT\XEH_PreInit.sqf']);
+		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PreInit.sqf']";
 	};
+};
+
+//Cell counts measured in thousands per ml.
+//private _defaultInfo = [[QGVAR(redBloodCellCount),5000],[QGVAR(whiteBloodCellCount),6],[QGVAR(plateletCount),150]];
+
+/*
+TODO: (ordered)
+- Blood Info system (DONE)
+- Blood Types
+- Blood Information (DONE - MAJORITY)
+- Cannulation
+- Blood Refrigeration
+- Leave Body Respawn
+- Centrifuge
+*/
+
+class CfgWeapons {
+    class ACE_bloodIV_250;
+    class ACE_bloodIV_500;
+    class ACE_bloodIV;
+    #include "fluids\blood_250ml\CfgWeapons.hpp"
+    #include "fluids\blood_500ml\CfgWeapons.hpp"
+    #include "fluids\blood_1000ml\CfgWeapons.hpp"
 };
