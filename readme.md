@@ -10,10 +10,10 @@ This mod serves as a module-based expansion to the vanilla ACE Medical system, f
 
 ## Modules
 ### Core
-*I am aware this feature set may seem extensive, however other modules will also have a large focus on blood and such.*
+*I am aware this feature set may seem extensive for a core module, however these all set the frameworks for other modules and mods to use. All options are toggleable.*
 **Feature set:**
 - Cannulation
-    - IV, IO, picc
+    - IV
 - Blood Drawing
     - Transfusions
     - Blood samples
