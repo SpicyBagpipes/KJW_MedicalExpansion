@@ -26,8 +26,6 @@ This mod serves as a module-based expansion to the vanilla ACE Medical system, f
     - White/Red Blood Cells
     - Platelets
     - Diseases
-- Blood Refrigeration
-    - Adjustable spoil time
 - Leave Body Respawn
     - Player control is moved to a different unit, AI takes over their previous unit. Used for getting around boring unconsciousness whilst still giving medics their fun.
 <!--
