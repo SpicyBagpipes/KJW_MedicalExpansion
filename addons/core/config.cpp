@@ -8,7 +8,9 @@ class CfgPatches {
             "A3_Data_F",
             "A3_Weapons_F",
             "A3_Characters_F",
-            "A3_Data_F_AoW_Loadorder"
+            "A3_Data_F_AoW_Loadorder",
+            "ace_medical_treatment",
+            "ace_interaction"
         };
         requiredVersion=1;
 		units[] = {""};
@@ -31,25 +33,10 @@ class Extended_PreInit_EventHandlers {
 	};
 };
 
-//Cell counts measured in thousands per ml.
-//private _defaultInfo = [[QGVAR(redBloodCellCount),5000],[QGVAR(whiteBloodCellCount),6],[QGVAR(plateletCount),150]];
+#include "\a3\ui_f\hpp\defineCommonGrids.inc"
 
-/*
-TODO: (ordered)
-- Blood Info system (DONE)
-- Blood Types
-- Blood Information (DONE - MAJORITY)
-- Cannulation
-- Blood Refrigeration
-- Leave Body Respawn
-- Centrifuge
-*/
-
-class CfgWeapons {
-    class ACE_bloodIV_250;
-    class ACE_bloodIV_500;
-    class ACE_bloodIV;
-    #include "fluids\blood_250ml\CfgWeapons.hpp"
-    #include "fluids\blood_500ml\CfgWeapons.hpp"
-    #include "fluids\blood_1000ml\CfgWeapons.hpp"
-};
+#include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
+#include "ACE_Medical_Treatment_Actions.hpp"
+#include "KJW_MedicalExpansion.hpp"
+#include "gui.hpp"

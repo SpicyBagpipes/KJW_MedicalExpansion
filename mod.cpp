@@ -7,12 +7,12 @@ picture         = "title_co.paa";           // Picture displayed from the expans
 hideName        = "false";                  // Hide the extension name
 hidePicture     = "false";                  // Hide the extension menu
 
-logoSmall       = "icon_64_ca.paa";         // Display next to the item added by the mod 64x64
-logo            = "icon_128_ca.paa";        // Logo displayed in the main menu 128x128
-logoOver        = "icon_128_highlight_ca.paa"; // When the mouse is over, in the main menu 128x128
-tooltip         = "Tip of the morning";
+logoSmall       = "icon.paa";         // Display next to the item added by the mod 64x64
+logo            = "icon.paa";        // Logo displayed in the main menu 128x128
+logoOver        = "icon.paa"; // When the mouse is over, in the main menu 128x128
+tooltip         = "KJW's Medical Expansion Core";
 tooltipOwned    = "Who sold this to you?";  // Tool tip displayed when the mouse is left over, in the main menu
-overview        = "Best Mod ever!";         // Overview text, displayed from the extension menu
+overview        = "KJW's Medical Expansion Core";         // Overview text, displayed from the extension menu
 description     = "It's unclear where this will show"; // Probably in context with action
 action          = "";    // Website URL, that can accessed from the expansions menu 
 actionName      = "GitHub";                 // label of button/tooltip in extension menu

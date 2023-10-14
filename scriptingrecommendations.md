@@ -40,3 +40,5 @@
 Enable filepatching! It allows you to place a directory within Arma's folder to quickly overwrite parts of this mod for development.
 
 [Advanced Developer Tools:]("https://steamcommunity.com/sharedfiles/filedetails/?id=2369477168") Essential for scripting or config work in Arma.
+
+[Anrop's ACE3 Dev build:]("https://steamcommunity.com/sharedfiles/filedetails/?id=1882627645") Incredibly useful for developing updates for next ACE update.

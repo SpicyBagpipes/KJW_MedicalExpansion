@@ -1,5 +1,5 @@
 #define COMPONENT core
-#include "..\script_component.hpp"
+#include "\y\KJW_MedicalExpansion\addons\core\major_includes.hpp"
 #define COMPONENT_BEAUTIFIED MOD_NAME_BEAUTIFIED Core
 
 //Significantly helped by TFAR's radio_ids.hpp

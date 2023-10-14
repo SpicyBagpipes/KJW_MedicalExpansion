@@ -1,7 +1,10 @@
 #define MOD_NAME KJW_MedicalExpansion
 #define MOD_NAME_BEAUTIFIED KJW's Medical Expansion
+
 #define COMPONENT_GENERAL MOD_NAME##_##COMPONENT
+
 #define COMPONENT_POSTINIT COMPONENT_GENERAL##_PostInit
+
 #define COMPONENT_PREINIT COMPONENT_GENERAL##_PreInit
 
 #define QUOTE(P1) #P1
@@ -33,6 +36,7 @@
 
 #define FUNCTION_DECLARE(FUNCTIONNAME) class FUNCTIONNAME {\
 				file = QPATHTOF(functions\fnc_##FUNCTIONNAME##.sqf);\
+				recompile = 1;\
             };
 //file = QUOTE(MACRO_FUNCPATH(FUNCTIONNAME).sqf);
 

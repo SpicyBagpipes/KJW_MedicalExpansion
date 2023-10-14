@@ -1,3 +1,4 @@
+#include "XEH_PREP.sqf"
 /*
  *  Author: KJW
  * 
@@ -15,5 +16,4 @@
  *  Public: No
  */
 
-
-#include "XEH_PREP.sqf";
+call FUNC(addSettings)

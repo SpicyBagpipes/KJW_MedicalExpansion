@@ -9,7 +9,7 @@
  *  1: Addition <STRING>
  * 
  *  Return Value:
- *  None
+ *  0: New ID <STRING>
  * 
  *  Example:
  *  [_data, "add"] call KJW_MedicalExpansion_Core_fnc_handleData
@@ -20,12 +20,12 @@
 
 params ["_data", "_addition"];
 
-//Example _data array: [classname,[bloodinfo],timestamp]
+//Example _data array: [classname,[bloodinfo (hashmap)]]
 //Bloodinfo should probably be hashmap.
 
 private _fluidData = GVAR(fluidData);
 private _classname = _data#0;
-if (count _fluidData isEqualTo 0 && _addition isEqualTo "add") exitWith {
+if (count _fluidData isEqualTo 0 && _addition == "add") exitWith {
 	//Does not exist, create.
 	private _newKey = _classname + "_1";
 	GVAR(fluidData) set [_newKey, _data];
@@ -37,9 +37,9 @@ switch _addition do {
 		{
 			private _key = _x;
 
-			if (_classname in _key) then {
+			private _hasKeyed = if (_classname in _key) then {
 				//This is not 1.
-				private _id = _key - _classname_;
+				private _id = _key regexReplace [_classname_, ""];
 				_id = parseNumber _id;
 				private _newId = _id+1;
 				_newId = str _newId;
@@ -48,17 +48,15 @@ switch _addition do {
 					//Exists, skip iteration.
 					continue
 				};
-				if (true) exitWith {
-					//Does not exist, create.
-					GVAR(fluidData) set [_newKey, _data];
-					_newKey
-				};
+				GVAR(fluidData) set [_newKey, _data];
+				_newKey
 			} else {
 				//this is 1. overwrite 1.
 				private _newKey = _classname + "_1";
 				GVAR(fluidData) set [_newKey, _data];
 				_newKey
 			};
+			if (!isNil "_hasKeyed") exitWith {_hasKeyed};
 		} forEach _fluidData;
 	};
 	case "remove": {
