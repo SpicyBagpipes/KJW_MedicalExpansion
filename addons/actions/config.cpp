@@ -1,5 +1,9 @@
 #include "script_component.hpp"
 
+#if __has_include("\x\kat\addons\main\script_component.hpp")
+#define PATCH_SKIP "KAM Loaded"
+#endif
+
 class CfgPatches {
     class COMPONENT_GENERAL {
         author="KJW";
@@ -10,7 +14,8 @@ class CfgPatches {
             "A3_Characters_F",
             "A3_Data_F_AoW_Loadorder",
             "ace_medical_treatment",
-            "ace_interaction"
+            "ace_interaction",
+            "KJW_MedicalExpansion_Core"
         };
         requiredVersion=1;
 		units[] = {""};
@@ -21,21 +26,9 @@ class CfgPatches {
 
 //https://trello.com/b/xH9BBZsd/kjws-medical-expansion
 
-class Extended_PostInit_EventHandlers {
-	class COMPONENT_POSTINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PostInit.sqf']";
-	};
-};
-
-class Extended_PreInit_EventHandlers {
-	class COMPONENT_PREINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PreInit.sqf']";
-	};
-};
-
-#include "\a3\ui_f\hpp\defineCommonGrids.inc"
-
+#ifdef PATCH_SKIP
+#include "KAM_ACE_Medical_Treatment_Actions.hpp"
+#else
+#include "ACE_Medical_Treatment_Actions.hpp"
 #include "CfgWeapons.hpp"
-#include "CfgVehicles.hpp"
-#include "KJW_MedicalExpansion.hpp"
-#include "gui.hpp"
+#endif

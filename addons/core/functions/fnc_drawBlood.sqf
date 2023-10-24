@@ -37,7 +37,6 @@ private _value = switch (true) do {
 _value params ["_bloodBag", "_amount"];
 
 _patient setVariable ["ACE_Medical_bloodVolume",_patientVolume-_amount, true];
-
 {
 	private _reduction = -_amount*4; //Negative value.
 	private _currentVar = _unitData get _x;

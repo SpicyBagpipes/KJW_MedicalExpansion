@@ -48,7 +48,24 @@ if (!isMultiplayer || !isPlayer _unit) exitWith {
         PROB_ABPOS,
         PROB_ABNEG
     ];
+
+    if (GVAR(KAMLoaded)) then {
+        private _KAMType = [_unit] call kat_circulation_fnc_bloodType;
+        private _newType = switch _KAMType do {
+            case "A": {BLOODTYPE_APOS};
+            case "A_N": {BLOODTYPE_ANEG};
+            case "B": {BLOODTYPE_BPOS};
+            case "B_N": {BLOODTYPE_BNEG};
+            case "O": {BLOODTYPE_OPOS};
+            case "O_N": {BLOODTYPE_ONEG};
+            case "AB": {BLOODTYPE_ABPOS};
+            case "AB_N": {BLOODTYPE_ABNEG};
+        };
+        _bloodType = _newType;
+    };
+
 	_unit setVariable [QGVAR(bloodType),_bloodType,true];
+    
 	_bloodType
 };
 
@@ -68,5 +85,21 @@ _type = switch (true) do {
     case (_random <= 580): {BLOODTYPE_APOS};
     default {BLOODTYPE_OPOS};
 };
+
+if (GVAR(KAMLoaded)) then {
+    private _KAMType = [_unit] call kat_circulation_fnc_bloodType;
+    private _newType = switch _KAMType do {
+        case "A": {BLOODTYPE_APOS};
+        case "A_N": {BLOODTYPE_ANEG};
+        case "B": {BLOODTYPE_BPOS};
+        case "B_N": {BLOODTYPE_BNEG};
+        case "O": {BLOODTYPE_OPOS};
+        case "O_N": {BLOODTYPE_ONEG};
+        case "AB": {BLOODTYPE_ABPOS};
+        case "AB_N": {BLOODTYPE_ABNEG};
+    };
+    _type = _newType;
+};
 _unit setVariable [QGVAR(bloodType),_type,true];
+
 _type

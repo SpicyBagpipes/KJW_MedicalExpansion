@@ -16,4 +16,6 @@
  *  Public: No
  */
 
-call FUNC(addSettings)
+call FUNC(addSettings);
+
+GVAR(KAMLoaded) = isClass (configFile >> "CfgPatches" >> "kat_main");

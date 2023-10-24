@@ -46,7 +46,7 @@ class RscTitles {
 			class RHFactor: BloodType {
 				idc = 2123;
 				text = "<NULL>"; //--- ToDo: Localize;
-				x = QUOTE(40.5 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X);
+				x = QUOTE(40 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X);
 				y = QUOTE(8.56 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y);
 				w = QUOTE(3 * GUI_GRID_CENTER_W);
 				h = QUOTE(1.5 * GUI_GRID_CENTER_H);

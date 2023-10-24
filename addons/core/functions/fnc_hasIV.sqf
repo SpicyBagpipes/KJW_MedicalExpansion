@@ -24,4 +24,9 @@ private _bodyPartIndex = BODYPARTS find toLower _bodyPart;
 private _IVs = _unit getVariable [QGVAR(IV),[0,0,0,0,0,0]];
 private _partCathetered = _IVs#_bodyPartIndex;
 
+if (GVAR(KAMLoaded) && _partCathetered == 0) then {
+	_IVs = _unit getVariable ["kat_pharma_IV",[0,0,0,0,0,0]];
+	_partCathetered = _IVs#_bodyPartIndex;
+};
+
 _partCathetered

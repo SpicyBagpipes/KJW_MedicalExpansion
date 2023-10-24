@@ -9,13 +9,13 @@ class CfgPatches {
             "A3_Weapons_F",
             "A3_Characters_F",
             "A3_Data_F_AoW_Loadorder",
-            "ace_medical_treatment",
-            "ace_interaction"
+            "kat_pharma"
         };
-        requiredVersion=1;
+        requiredVersion = 1;
 		units[] = {""};
 		weapons[] = {""};
 		vehicles[] = {""};
+        skipWhenMissingDependencies = 1;
 	};
 };
 
@@ -23,19 +23,12 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
 	class COMPONENT_POSTINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PostInit.sqf']";
+		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\kam_features\XEH_PostInit.sqf']";
 	};
 };
 
 class Extended_PreInit_EventHandlers {
 	class COMPONENT_PREINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\core\XEH_PreInit.sqf']";
+		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\kam_features\XEH_PreInit.sqf']";
 	};
 };
-
-#include "\a3\ui_f\hpp\defineCommonGrids.inc"
-
-#include "CfgWeapons.hpp"
-#include "CfgVehicles.hpp"
-#include "KJW_MedicalExpansion.hpp"
-#include "gui.hpp"

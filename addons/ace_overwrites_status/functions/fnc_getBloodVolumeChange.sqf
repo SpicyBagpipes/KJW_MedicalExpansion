@@ -21,14 +21,14 @@
 params ["_unit", "_deltaT", "_syncValues"];
 
 private _bloodVolumeChange = -_deltaT * GET_BLOOD_LOSS(_unit);
-private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", []];
+private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashmap]; // EDIT HERE.
 
 if (!isNil {_unit getVariable QEGVAR(medical,ivBags)}) then {
     private _bloodBags = _unit getVariable [QEGVAR(medical,ivBags), []];
     private _tourniquets = GET_TOURNIQUETS(_unit);
 
     _bloodBags = _bloodBags apply {
-        _x params ["_bagVolumeRemaining", "_type", "_bodyPart", "_bloodData"];
+        _x params ["_bagVolumeRemaining", "_type", "_bodyPart", "_bloodData"]; // EDIT HERE.
 
         private _bloodDataHash = _bloodData#1;
 
@@ -48,7 +48,6 @@ if (!isNil {_unit getVariable QEGVAR(medical,ivBags)}) then {
 				_value = _value + _dataChange;
 				_unitData set [_x, _value];
 			} forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
-            //End edits.
         };
 
         if (_bagVolumeRemaining < 0.01) then {
@@ -73,5 +72,7 @@ if (!isNil {_unit getVariable QEGVAR(medical,ivBags)}) then {
     private _currentVar = _unitData get _x;
     _unitData set [_x, _currentVar+_reduction];
 } forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
+
+// End edits.
 
 _bloodVolumeChange
