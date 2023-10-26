@@ -11,10 +11,9 @@
  *  None
  * 
  *  Example:
- *  call KJW_MedicalExpansion_KAM_Features_XEH_PREP
+ *  call KJW_MedicalExpansion_PPE_XEH_PREP
  * 
  *  Public: No
  */
 
-PREP(updatePlatelets)
-PREP(updateHaemoglobin)
+PREP(processPPE)

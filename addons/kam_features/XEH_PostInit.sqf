@@ -18,5 +18,3 @@
 
 ["ace_medical_handleUnitVitals", FUNC(updatePlatelets)] call CBA_fnc_addEventHandler;
 ["ace_medical_handleUnitVitals", FUNC(updateHaemoglobin)] call CBA_fnc_addEventHandler;
-
-call FUNC(addSettings);

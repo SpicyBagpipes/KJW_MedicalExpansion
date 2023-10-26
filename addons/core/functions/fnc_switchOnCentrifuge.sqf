@@ -26,6 +26,8 @@ _target setVariable [QGVAR(spinStartedTime), _time, true];
 private _configDuration = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> QGVAR(centrifugeDuration));
 private _duration = GVAR(centrifugeCoef)*_configDuration;
 
+_target animateSource ["lid_source", 0];
+
 [{
 	params ["_target", "_timeStarted"];
 
@@ -34,7 +36,9 @@ private _duration = GVAR(centrifugeCoef)*_configDuration;
 	private _lastTimeStarted = _target getVariable [QGVAR(spinStartedTime), 0];
 	
 	if (_timeStarted < _lastTimeStarted) exitWith {};
-	
+
+	_target animateSource ["lid_source", 1];
+
 	_target setVariable [QGVAR(spinComplete), true, true];
 	_target setVariable [QGVAR(spinInProgress), false, true];
 }, [_target, _time], _duration] call CBA_fnc_waitAndExecute;

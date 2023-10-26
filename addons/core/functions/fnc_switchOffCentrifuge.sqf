@@ -22,3 +22,4 @@ _target setVariable [QGVAR(spinInProgress), false, true];
 _target setVariable [QGVAR(spinStartedTime), 0, true];
 _target setVariable [QGVAR(currentLoaded), [], true];
 _target setVariable [QGVAR(spinComplete), false, true];
+_target animateSource ["lid_source", 1];

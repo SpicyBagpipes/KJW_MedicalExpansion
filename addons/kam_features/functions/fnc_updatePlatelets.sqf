@@ -19,25 +19,17 @@
 
 params ["_patient", "_deltaT"];
 
-private _timeToTake = 60;
-
 private _bloodInfo = _patient getVariable [QEGVAR(core,bloodInfo), createHashmap];
-private _KAMClottingFactors = (_patient getVariable ["kat_pharma_coagulationFactor", 10]) min GVAR(maximumCoagulationFactor);
-private _plateletCount = _bloodInfo get "Platelet"; // 0-24 value, where 24 is maximum. Needs to be a 100% chance every 60 seconds at 24 platelet.
-private _plateletMultiplier = (_plateletCount min 24)/24;
+private _KAMCoagulation = (_patient getVariable ["kat_pharma_coagulationFactor", 10]) max 1;
+private _plateletCount = _bloodInfo get "Platelet"; // 0-24 value, where 24 is maximum.
+private _timeToTake = 1.5*_plateletCount;
 
-/*
-	1/60*_deltaT = once every minute on average.
+if (_plateletCount > 18) exitWith {};
 
-	_plateletCount/24 = platelet count multiplier.
-
-				_deltaT
-	________________________________
-	(60*_deltaT)*(_plateletCount/24)
-*/
+private _plateletMultiplier = 24/(_plateletCount min 24);
 
 private _roll = random _timeToTake*_deltaT;
 
 if (_roll < _plateletMultiplier*_deltaT) then {
-	_patient setVariable ["kat_pharma_coagulationFactor", _KAMClottingFactors + 1, true];
+	_patient setVariable ["kat_pharma_coagulationFactor", _KAMCoagulation - 1, true];
 };

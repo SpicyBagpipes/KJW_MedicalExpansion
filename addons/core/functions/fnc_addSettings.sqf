@@ -16,6 +16,7 @@
  *  Public: No
  */
 
+private _arr = str [];
 
 [
 	QGVAR(vestBlocksCPR),
@@ -48,12 +49,4 @@
 	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
 	{}, // Setting changed code
 	false // Requires restart
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(respirators),
-	"EDITBOX",
-	["Respirators", "Array of respirator classnames. Use #ANY for everything to be a respirator. Use '' for nothing to be a respirator"],
-	["KJW's Medical Expansion", "Configuration"],
-	str []
 ] call CBA_fnc_addSetting;
