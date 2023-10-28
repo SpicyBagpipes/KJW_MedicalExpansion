@@ -61,7 +61,7 @@ private _outputArr = [];
 		continue;
 	};
 	
-	if ((_requirements arrayIntersect _allItems isEqualTo _requirements)) then {
+	if (count (_requirements arrayIntersect _allItems) > 0) then {
 		_outputArr pushBack _rating;
 		continue;
 	};

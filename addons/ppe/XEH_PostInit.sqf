@@ -22,7 +22,7 @@
 	{
 		params ["_unit"];
 		
-		if (isPlayer _unit) exitWith {}; //Is handled by unit player EH.
+		if (isPlayer _unit || !local _unit) exitWith {}; //Is handled by unit player EH.
 		private _newPPE = _unit call FUNC(processPPE);
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
@@ -34,13 +34,14 @@
 	{
 		params ["_unit"];
 		
+		if (!local _unit) exitWith {};
 		private _newPPE = _unit call FUNC(processPPE);
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
 ] call CBA_fnc_addClassEventHandler;
 
 [
-	"unit",
+	"loadout",
 	{
 		private _newPPE = ace_player call FUNC(processPPE);
 		ace_player setVariable [QGVAR(ppe), _newPPE];

@@ -107,6 +107,7 @@ if (hasInterface) then {
 	"init",
 	{
 		params ["_unit"];
+		if (!local _unit) exitWith {};
 		private _bloodType = [_unit] call FUNC(getBloodType);
 		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
 		_bloodInfo set ["bloodType", _bloodType];
