@@ -25,7 +25,7 @@
 params ["_medic", "_patient", "_bodyPart", "_treatment", "_user", "_usedItem"];
 
 private _patientVolume = _patient getVariable ["ACE_Medical_bloodVolume",6];
-private _unitData = _patient getVariable ["KJW_MedicalExpansion_Core_BloodInfo", []];
+private _unitData = _patient getVariable [QGVAR(bloodInfo), []];
 
 private _value = switch (true) do {
 	case ("250" in _treatment): {["KJW_MedicalExpansion_bloodBag_250",0.25]};

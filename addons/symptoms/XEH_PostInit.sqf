@@ -1,9 +1,8 @@
 #include "script_component.hpp"
-#include "XEH_PREP.hpp"
 /*
  *  Author: KJW
  * 
- *  Handles preinit
+ *  Handles postinit for the addon
  * 
  *  Arguments:
  *  None
@@ -12,11 +11,10 @@
  *  None
  * 
  *  Example:
- *  call KJW_MedicalExpansion_Core_XEH_PreInit
+ *  call KJW_MedicalExpansion_Symptoms_XEH_PostInit
  * 
  *  Public: No
  */
 
 call FUNC(addSettings);
-
-GVAR(KAMLoaded) = isClass (configFile >> "CfgPatches" >> "kat_main");
+call FUNC(addEventHandlers);

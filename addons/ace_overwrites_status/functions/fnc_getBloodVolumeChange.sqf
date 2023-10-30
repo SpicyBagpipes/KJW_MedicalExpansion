@@ -51,7 +51,7 @@ if (!isNil {_unit getVariable QEGVAR(medical,ivBags)}) then {
         };
 
         if (_bagVolumeRemaining < 0.01) then {
-            ["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent;
+            ["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent; // Check if this is a default one or not.
             []
         } else {
             [_bagVolumeRemaining, _type, _bodyPart, [_bloodData#0, _bloodDataHash]]
