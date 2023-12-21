@@ -12,7 +12,7 @@
 
 #define GVAR(P1) COMPONENT_GENERAL##_##P1
 #define QGVAR(P1) QUOTE(GVAR(P1))
-#define QQVAR(P1) QQUOTE(GVAR(P1))
+#define QQGVAR(P1) QQUOTE(GVAR(P1))
 
 #define EGVAR(P1,P2) MOD_NAME##_##P1##_##P2
 #define QEGVAR(P1,P2) QUOTE(EGVAR(P1,P2))
@@ -28,6 +28,7 @@
 
 #define PATHTOF(P1) \y\##MOD_NAME##\addons\##COMPONENT##\##P1
 #define QPATHTOF(P1) QUOTE(PATHTOF(P1))
+#define QQPATHTOF(P1) QUOTE(QPATHTOF(P1))
 
 #define PATHTOEF(P1,P2) \y\##MOD_NAME##\addons\##P1##\##P2
 #define QPATHTOEF(P1,P2) QUOTE(EPATHTOF(P1,P2))

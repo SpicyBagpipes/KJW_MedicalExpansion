@@ -18,3 +18,12 @@
 
 LINKEVENT(cough)
 LINKEVENT(sneeze)
+LINKEVENT(sniff)
+
+[
+	"ace_medical_handleUnitVitals",
+	{
+		params ["_unit", "_deltaT"];
+        [_unit, _deltaT] call FUNC(unitProcess);
+	}
+] call CBA_fnc_addEventHandler;

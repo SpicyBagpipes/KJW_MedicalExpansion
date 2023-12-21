@@ -22,7 +22,7 @@ private _sfx = selectRandom [QPATHTOF(data\sfx\cough_1.wss),QPATHTOF(data\sfx\co
 
 playSound3D [_sfx, _unit];
 
-if (!GVAR(reducedMotion)) then {
+if (!GVAR(reducedMotion) && _unit == ace_player) then {
 	[
 		{
 			

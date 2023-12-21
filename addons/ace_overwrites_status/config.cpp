@@ -44,9 +44,13 @@ class CfgPatches {
 
 //Use CfgFunctions
 class CfgFunctions {
-    class ACE_Medical_Status {
-        class Functions {
-            FUNCTION_DECLARE(getBloodVolumeChange)
+    class overwrite_ace_medical_status {
+        tag = "ace_medical_status";
+        class ace_medical_status {
+            class getBloodVolumeChange {
+                recompile = 1;
+                file = QPATHTOF(functions\fnc_getBloodVolumeChange.sqf);
+            };
         };
     };
 };

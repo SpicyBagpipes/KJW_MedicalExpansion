@@ -21,12 +21,12 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
 	class COMPONENT_POSTINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\ppe\XEH_PostInit.sqf']";
+		init = QUOTE(call compileScript [QQPATHTOF(XEH_PostInit.sqf)]);
 	};
 };
 
 class Extended_PreInit_EventHandlers {
 	class COMPONENT_PREINIT {
-		init = "call compileScript ['\y\KJW_MedicalExpansion\addons\ppe\XEH_PreInit.sqf']";
+		init = QUOTE(call compileScript [QQPATHTOF(XEH_PreInit.sqf)]);
 	};
 };

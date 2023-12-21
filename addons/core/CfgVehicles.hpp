@@ -1,43 +1,4 @@
 class CfgVehicles {
-	/*class Box_C_UAV_06_F;
-	class KJW_Centrifuge: Box_C_UAV_06_F {
-		displayName = "Centrifuge";
-		GVAR(centrifugeMaxLoad) = 6;
-		GVAR(centrifugeDuration) = 5;
-		class ACE_Actions {
-			class ACE_MainActions {
-				condition = "true";
-				displayName = "Interactions";
-				distance = 4;
-				position = "";
-				selection = "";
-				class LoadCentrifuge {
-					displayName = "Insert Sample";
-					condition = QUOTE(_this call FUNC(canLoadCentrifuge));
-					exceptions[] = {"isNotInside","isNotSwimming"};
-					distance = 4;
-					insertChildren = QUOTE(_this call FUNC(addCentrifugeLoadActions));
-				};
-				class CentrifugeInventory: LoadCentrifuge {
-					displayName = "Loaded Samples";
-					condition = QUOTE(_this call FUNC(centrifugeHasLoad));
-					insertChildren = QUOTE(_this call FUNC(addCentrifugeInventoryActions));
-				};
-				class TurnOnCentrifuge {
-					displayName = "Turn On";
-					condition = QUOTE(_this call FUNC(canSwitchOnCentrifuge));
-					exceptions[] = {"isNotInside","isNotSwimming"};
-					distance = 4;
-					statement = QUOTE(_this call FUNC(switchOnCentrifuge));
-				};
-				class TurnOffCentrifuge: TurnOnCentrifuge {
-					displayName = "Turn Off";
-					condition = QUOTE(_this call FUNC(canSwitchOffCentrifuge));
-					statement = QUOTE(_this call FUNC(switchOffCentrifuge));
-				};
-			};
-		};
-	};*/
 	class Items_base_F; 
     class KJW_Centrifuge_F : Items_base_F
     {
@@ -60,7 +21,7 @@ class CfgVehicles {
                 source = "user"; // "user" = custom source = not controlled by some engine value
 				initPhase = 1; // Initial value of animations based on this source
 				animPeriod = 1; // Coefficient for duration of change of this animation
-				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+				sound = "GenericDoorsSound"; // Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
             };
         };
 		class ACE_Actions {
