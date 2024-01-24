@@ -1,9 +1,5 @@
 # KJW's Medical Expansion
 
-Trello: https://trello.com/b/xH9BBZsd/kjws-medical-expansion
-
----
-
 KJW's Medical Expansion is a set of mods which aim to expand the existing ACE medical system in order to add a variety of engaging, interesting and realistic features. A higher level of fidelity will be achieved when the mod is ran with [KAT - Advanced Medical](https://steamcommunity.com/sharedfiles/filedetails/?id=2020940806), and will expand on features that they add. The current module set is found below, with this repository being used for Core.
     - KJW's Medical Expansion: Core
     - KJW's Medical Expansion: Radiate
@@ -26,3 +22,5 @@ The Core module aims to provide frameworks that the other mods can build off of,
 ## Getting Started
 
 Please read the [scripting guidelines](scriptingguidelines.md) before contributing. If you would like some additional tools to assist in development, take a read of [scripting recommendations](scriptingrecommendations.md)
+---
+Trello: https://trello.com/b/xH9BBZsd/kjws-medical-expansion
