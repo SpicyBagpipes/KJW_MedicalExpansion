@@ -6,7 +6,7 @@ KJW's Medical Expansion is a set of mods which aim to expand the existing ACE me
     - KJW's Medical Expansion: Diseases
     - KJW's Medical Expansion: Toxins
 
----
+
 # Core
 
 The Core module aims to provide frameworks that the other mods can build off of, as well as a baseline of realistic features that do not necessarily require use of other Medical Expansion mods to gain benefits from. The feature set is as follows.
