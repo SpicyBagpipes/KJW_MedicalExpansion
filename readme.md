@@ -3,49 +3,23 @@
 Trello: https://trello.com/b/xH9BBZsd/kjws-medical-expansion
 
 ---
-## Brief
-This mod serves as a module-based expansion to the vanilla ACE Medical system, focusing on adding a high level of fidelity at all medical levels, as well as making the player feel more connected to the unit they control.
-
+KJW's Medical Expansion is a set of mods which aim to expand the existing ACE medical system in order to add a variety of engaging, interesting and realistic features. A higher level of fidelity will be achieved when the mod is ran with [KAT - Advanced Medical](https://steamcommunity.com/sharedfiles/filedetails/?id=2020940806), and will expand on features that they add. The current module set is found below, with this repository being used for Core.
+    - KJW's Medical Expansion: Core
+    - KJW's Medical Expansion: Radiate
+    - KJW's Medical Expansion: Diseases
+    - KJW's Medical Expansion: Toxins
 ---
+# Core
 
-## Modules
-### Core
-*I am aware this feature set may seem extensive for a core module, however these all set the frameworks for other modules and mods to use. All options are toggleable.*
-**Feature set:**
-- Cannulation
-    - IV
-- Blood Drawing
-    - Transfusions
-    - Blood samples
-    - Relevant properties will carry across
-- Blood Types
-    - Distributed according to real world population, based on player's steam ID
-- Centrifuge System
-    - Allows users to see properties of blood
-- Blood Information
-    - White/Red Blood Cells
-    - Platelets
-    - Diseases
-- Leave Body Respawn
-    - Player control is moved to a different unit, AI takes over their previous unit. Used for getting around boring unconsciousness whilst still giving medics their fun.
-<!--
-### Diseases
-**Feature set:**
-- One
-    - Two
-
-### Hospital
-**Feature set:**
-- One
-    - Two
-
-### World
-**Feature set:**
-- Adrenaline System
-    - Two
--->
-
----
+The Core module aims to provide frameworks that the other mods can build off of, as well as a baseline of realistic features that do not necessarily require use of other Medical Expansion mods to gain benefits from. The feature set is as follows.
+    - Blood Data - Red & White blood cells as well as platelets.
+    - Cannulation Framework - Configurable cannulae with line occupation.
+    - Symptoms Framework - Symptoms of diseases or other illnesses.
+    - Centrifuge - Examine blood samples and view their properties for verifying disease diagnoses.
+    - Blood Types - Synchronised with KAM Blood Types, with an option for incompatibility.
+    - Leave Body Respawn - Allow your medics to continue working on you after your respawn.
+        - Comas - Ensure the AI controlling your previous body do not wake up.
+    - PPE - Used by other Medical Expansion mods and has the ability to be used by extended mods.
 
 ## Getting Started
 
