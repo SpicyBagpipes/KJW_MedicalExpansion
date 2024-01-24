@@ -22,5 +22,6 @@ The Core module aims to provide frameworks that the other mods can build off of,
 ## Getting Started
 
 Please read the [scripting guidelines](scriptingguidelines.md) before contributing. If you would like some additional tools to assist in development, take a read of [scripting recommendations](scriptingrecommendations.md)
+
 ---
 Trello: https://trello.com/b/xH9BBZsd/kjws-medical-expansion
