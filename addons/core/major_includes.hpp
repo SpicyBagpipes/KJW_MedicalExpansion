@@ -42,3 +42,6 @@
 //file = QUOTE(MACRO_FUNCPATH(FUNCTIONNAME).sqf);
 
 #define PREP(FUNCTIONNAME) COMPONENT_GENERAL##_fnc_##FUNCTIONNAME = compile preProcessFileLineNumbers '\y\##MOD_NAME##\addons\##COMPONENT##\functions\fnc_##FUNCTIONNAME##.sqf';
+
+#define RATING KJW_MedicalExpansion_PPE_Rating
+#define REQUIREMENTS KJW_MedicalExpansion_PPE_Requirements[]

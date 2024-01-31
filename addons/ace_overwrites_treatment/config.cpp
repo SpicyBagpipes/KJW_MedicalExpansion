@@ -44,10 +44,17 @@ class CfgPatches {
 
 //Use CfgFunctions
 class CfgFunctions {
-    class ACE_Medical_Treatment {
-        class Functions {
-            FUNCTION_DECLARE(ivBag)
-            FUNCTION_DECLARE(ivBagLocal)
+    class overwrite_ACE_Medical_Treatment {
+        tag = "ace_medical_treatment";
+        class ace_medical_treatment {
+            class ivBag {
+                recompile = 1;
+                file = QPATHTOF(functions\fnc_ivBag.sqf);
+            };
+            class ivBagLocal {
+                recompile = 1;
+                file = QPATHTOF(functions\fnc_ivBagLocal.sqf);
+            };
         };
     };
 };

@@ -45,9 +45,13 @@ class CfgPatches {
 
 //Use CfgFunctions
 class CfgFunctions {
-    class ACE_Medical_GUI {
-        class Functions {
-            FUNCTION_DECLARE(updateInjuryList)
+    class overwrite_ace_medical_gui {
+        tag = "ace_medical_gui";
+        class ace_medical_gui {
+            class updateInjuryList {
+                recompile = 1;
+                file = QPATHTOF(functions\fnc_updateInjuryList.sqf);
+            };
         };
     };
 };
