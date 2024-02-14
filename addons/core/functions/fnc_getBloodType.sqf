@@ -71,7 +71,7 @@ if (!isMultiplayer || !isPlayer _unit) exitWith {
 
 //Is player and is multiplayer.
 
-private _uid = getPlayerUID player select [0,5]; //Arma cannot handle much longer strings.
+private _uid = getPlayerUID player select [11,6]; //Arma cannot handle much longer strings.
 _uid = parseNumber _uid;
 private _random = _uid random 1000;
 
