@@ -45,5 +45,8 @@
 	{
 		private _newPPE = ace_player call FUNC(processPPE);
 		ace_player setVariable [QGVAR(ppe), _newPPE];
-	}
+	},
+	true,
+	[],
+	true
 ] call CBA_fnc_addPlayerEventHandler;

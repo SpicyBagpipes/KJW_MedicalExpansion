@@ -52,17 +52,17 @@ private _outputArr = [];
 	};
 	
 	if (isNil "_requirements") then {
-		_outputArr pushBack _rating;
+		_outputArr pushBack _rating*EGVAR(core,ppeCoef);
 		continue;
 	};
 	
 	if (_requirements isEqualTo []) then {
-		_outputArr pushBack _rating;
+		_outputArr pushBack _rating*EGVAR(core,ppeCoef);
 		continue;
 	};
 	
 	if (count (_requirements arrayIntersect _allItems) > 0) then {
-		_outputArr pushBack _rating;
+		_outputArr pushBack _rating*EGVAR(core,ppeCoef);
 		continue;
 	};
 

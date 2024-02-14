@@ -52,6 +52,17 @@ private _arr = str [];
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(ppeCoef),
+	"SLIDER",
+	["PPE Coefficient", "Coefficient to multiply ppe effectiveness by"],
+	["KJW's Medical Expansion", "PPE"],
+	[0, 15, 1, 0], // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	false // Requires restart
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(bloodIncompatibilityEnabled),
 	"CHECKBOX",
 	["Blood Incompatability", "Enabled will have blood type incompatability symptoms and such"],
