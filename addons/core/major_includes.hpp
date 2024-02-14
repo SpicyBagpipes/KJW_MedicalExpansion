@@ -45,3 +45,6 @@
 
 #define RATING KJW_MedicalExpansion_PPE_Rating
 #define REQUIREMENTS KJW_MedicalExpansion_PPE_Requirements[]
+
+#define GET_NUMBER(config,default) (if (isNumber (config)) then {getNumber (config)} else {default})
+#define GET_TEXT(config,default) (if (isText (config)) then {getText (config)} else {default})

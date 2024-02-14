@@ -97,7 +97,7 @@ if (_cannula isNotEqualTo 0) then {
 		_entries pushBack [_cannulationString, _cannulationColour];
 	};
 } else {
-    _entries pushBack ["No Catheter", _nonissueColor];
+    _entries pushBack ["No catheter", _nonissueColor];
 };
 
 // END FUNCTION EDITS ///////////////////////////////////////////////////////////////////////////////////

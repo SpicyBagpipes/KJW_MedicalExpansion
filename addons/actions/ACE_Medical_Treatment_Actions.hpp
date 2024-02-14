@@ -16,7 +16,7 @@ class ACE_Medical_Treatment_Actions {
 		displayName = "Remove IV Line";
 		displayNameProgress = "Removing IV...";
 		items[] = {};
-		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
+		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1)";
 		callbackSuccess = QEFUNC(core,removeIV);
 	};
 	class PushIV: ApplyIV { // Needed for KAM

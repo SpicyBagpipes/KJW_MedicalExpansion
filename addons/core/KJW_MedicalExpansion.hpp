@@ -10,4 +10,18 @@ class MOD_NAME {
 			handlingAmount = 1;
 		};
 	};
+	class BloodProperties {
+		class rbc {
+			displayName = "Red Blood Cells";
+		};
+		class wbc {
+			displayName = "White Blood Cells";
+		};
+		class bloodType {
+			displayName = "Blood Type";
+		};
+		class platelet {
+			displayName = "Platelets";
+		};
+	};
 };

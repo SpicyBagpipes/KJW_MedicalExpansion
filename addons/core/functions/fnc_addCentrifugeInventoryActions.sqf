@@ -34,7 +34,7 @@ private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 			_target setVariable [QGVAR(currentLoaded), _currentLoaded, true];
 
 			// Display results.
-			[_item] call KJW_MedicalExpansion_Core_fnc_showBloodLabel
+			[_item] call KJW_MedicalExpansion_Core_fnc_showCentrifuge;
 		} else {
 			// Unload.
 			private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];

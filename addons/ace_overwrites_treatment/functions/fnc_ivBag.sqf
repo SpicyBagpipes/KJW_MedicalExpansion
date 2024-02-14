@@ -21,11 +21,9 @@
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem"];
+params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "_selectedFluid"];
 
 [_patient, _usedItem] call FUNC(addToTriageCard);
 [_patient, "activity", LSTRING(Activity_gaveIV), [[_medic, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
-
-private _selectedFluid = _medic getVariable ["KJW_MedicalExpansion_Core_LastUsedFluid",""];
 
 [QGVAR(ivBagLocal), [_patient, _bodyPart, _classname, _selectedFluid], _patient] call CBA_fnc_targetEvent;

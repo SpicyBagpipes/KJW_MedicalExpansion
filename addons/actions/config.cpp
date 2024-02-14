@@ -28,6 +28,12 @@ class CfgPatches {
 
 #ifdef PATCH_SKIP
 #include "KAM_ACE_Medical_Treatment_Actions.hpp"
+#include "CfgWeapons.hpp"
+class Extended_PostInit_EventHandlers {
+	class COMPONENT_POSTINIT {
+		init = QUOTE(call compileScript [QQPATHTOF(XEH_PostInit.sqf)]);
+	};
+};
 #else
 #include "ACE_Medical_Treatment_Actions.hpp"
 #include "CfgWeapons.hpp"

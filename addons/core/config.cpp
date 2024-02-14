@@ -39,3 +39,4 @@ class Extended_PreInit_EventHandlers {
 #include "CfgVehicles.hpp"
 #include "KJW_MedicalExpansion.hpp"
 #include "gui.hpp"
+#include "ACE_Medical_Injuries.hpp"

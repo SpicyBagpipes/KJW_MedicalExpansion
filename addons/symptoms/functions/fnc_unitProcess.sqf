@@ -2,17 +2,17 @@
 /*
  *  Author: KJW
  * 
- *  Function description
+ *  Handles calling symptom events for local unit
  * 
  *  Arguments:
- *  0: Objects <ARRAY>
- *  1: All <BOOL>
+ *  0: Unit <OBJECT>
+ *  1: Time since last call <NUMBER>
  * 
  *  Return Value:
  *  None
  * 
  *  Example:
- *  [[bob, ted], false] call KJW_MedicalExpansion_Symptoms_fnc_unitProcess
+ *  [player, 1] call KJW_MedicalExpansion_Symptoms_fnc_unitProcess
  * 
  *  Public: No
  */

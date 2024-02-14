@@ -42,21 +42,21 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
             private _bagChange = _flowCalculation min _bagVolumeRemaining; // absolute value of the change in miliLiters
             _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
             _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
-//Begin edits.
+            /////////////////////////////////////////// Begin edits.
             _unitData = if (_unitData isEqualTo []) then {createHashmapFromArray _unitData} else {_unitData};
-            {
-                private _data = _bloodDataHash getOrDefault [_x, 0, true];
-                private _dataChange = (_deltaT * EGVAR(medical,ivFlowRate) * 0.016667) min _data;
-                private _dataRemaining = _data - _dataChange;
-                _bloodDataHash set [_x, _dataRemaining];
-                private _value = _unitData getOrDefault [_x, 0, true];
-                _value = _value + _dataChange;
-                _unitData set [_x, _value];
-            } forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
+			{
+				private _data = _bloodDataHash getOrDefault [_x, 0, true];
+				private _dataChange = (_deltaT * EGVAR(medical,ivFlowRate) * 0.016667) min _data;
+				private _dataRemaining = _data - _dataChange;
+				_bloodDataHash set [_x, _dataRemaining];
+				private _value = _unitData getOrDefault [_x, 0, true];
+				_value = _value + _dataChange;
+				_unitData set [_x, _value];
+			} forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
         };
 
         if (_bagVolumeRemaining < 0.01) then {
-            ["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent;
+            ["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent; // Check if this is a default one or not.
             []
         } else {
             [_bagVolumeRemaining, _type, _bodyPart, [_bloodData#0, _bloodDataHash]]
@@ -73,11 +73,11 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
 };
 
 {
-    private _reduction = _bloodVolumeChange*4; // BloodVolumeChange is a negative value.
+    private _reduction = _bloodVolumeChange*4; //Negative value.
     private _currentVar = _unitData get _x;
     _unitData set [_x, _currentVar+_reduction];
 } forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
 
-// End edits.
+/////////////////////////////////////////////// End edits.
 
 _bloodVolumeChange

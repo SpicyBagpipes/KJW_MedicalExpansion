@@ -31,6 +31,10 @@ private _bloodData = createHashmap;
 if (!(isNil "_selectedFluid")) then {
 	_bloodData = KJW_MedicalExpansion_Core_FluidData get _selectedFluid;
 	_bloodData = [_selectedFluid, _bloodData#1];
+} else {
+	if (!("saline" in _classname)) then {
+		_bloodData = [_classname, createHashmapFromArray [["RBC",24],["WBC",24],["Platelet",24]]];
+	};
 };
 
 // Get attributes for the used IV

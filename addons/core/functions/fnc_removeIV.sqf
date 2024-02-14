@@ -27,3 +27,12 @@ _IVs set [_bodyPartIndex, 0];
 _patient setVariable [QGVAR(IV), _IVs, true];
 
 [_patient, "activity", "%1 removed an %2", [[_medic] call ACE_common_fnc_getName, "IV"]] call ACE_Medical_Treatment_fnc_addToLog;
+
+private _bloodBags = _patient getVariable ["ace_medical_ivBags", []];
+private _newBloodBags = [];
+{
+    _x params ["_bagVolumeRemaining", "_type", "_bodyPartForLoop", "_bloodData"];
+    if (_bodyPartIndex == _bodyPartForLoop) then {continue};
+    _newBloodBags pushBack _x;
+} forEach _bloodBags;
+_patient setVariable ["ace_medical_ivBags",_newBloodBags,true];

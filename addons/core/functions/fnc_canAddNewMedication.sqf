@@ -20,6 +20,8 @@
 
 params ["_unit", "_mainBodyPart"];
 
+if (!GVAR(ivCapacity)) exitWith {true};
+
 private _bloodBags = _unit getVariable ["ace_medical_ivbags", []];
 private _IVs = _unit getVariable [QGVAR(IV), [0, 0, 0, 0, 0, 0]];
 if (GVAR(KAMLoaded)) then {
