@@ -50,3 +50,6 @@
 	[],
 	true
 ] call CBA_fnc_addPlayerEventHandler;
+
+GVAR(PPE) = createHashmap;
+GVAR(PPERequirements) = createHashmap;

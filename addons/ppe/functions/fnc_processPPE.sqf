@@ -25,15 +25,15 @@ private _uniform = uniform _unit;
 
 private _allItems = [_headgear, _facewear, _backpack, _uniform] + itemsWithMagazines _unit;
 
-private _headgearRating = getNumber (configFile >> "CfgWeapons" >> _headgear >> QGVAR(rating));
-private _facewearRating = getNumber (configFile >> "CfgGlasses" >> _facewear >> QGVAR(rating));
-private _backpackRating = getNumber (configFile >> "CfgVehicles" >> _backpack >> QGVAR(rating));
-private _uniformRating = getNumber (configFile >> "CfgWeapons" >> _uniform >> QGVAR(rating));
+private _headgearRating = GET_NUMBER((configFile >> "CfgWeapons" >> _headgear >> QGVAR(rating)),GVAR(PPE) get _headgear);
+private _facewearRating = GET_NUMBER((configFile >> "CfgGlasses" >> _facewear >> QGVAR(rating)),GVAR(PPE) get _facewear);
+private _backpackRating = GET_NUMBER((configFile >> "CfgVehicles" >> _backpack >> QGVAR(rating)),GVAR(PPE) get _backpack);
+private _uniformRating = GET_NUMBER((configFile >> "CfgWeapons" >> _uniform >> QGVAR(rating)),GVAR(PPE) get _uniform);
 
-private _headgearRequirements = getArray (configFile >> "CfgWeapons" >> _headgear >> QGVAR(requirements));
-private _facewearRequirements = getArray (configFile >> "CfgGlasses" >> _facewear >> QGVAR(requirements));
-private _backpackRequirements = getArray (configFile >> "CfgVehicles" >> _backpack >> QGVAR(requirements));
-private _uniformRequirements = getArray (configFile >> "CfgWeapons" >> _uniform >> QGVAR(requirements));
+private _headgearRequirements = GET_ARRAY((configFile >> "CfgWeapons" >> _headgear >> QGVAR(requirements)),GVAR(PPERequirements) get _headgear);
+private _facewearRequirements = GET_ARRAY((configFile >> "CfgGlasses" >> _facewear >> QGVAR(requirements)),GVAR(PPERequirements) get _facewear);
+private _backpackRequirements = GET_ARRAY((configFile >> "CfgVehicles" >> _backpack >> QGVAR(requirements)),GVAR(PPERequirements) get _backpack);
+private _uniformRequirements = GET_ARRAY((configFile >> "CfgWeapons" >> _uniform >> QGVAR(requirements)),GVAR(PPERequirements) get _uniform);
 
 private _totalArr = [
 	[_headgearRating,_headgearRequirements],
