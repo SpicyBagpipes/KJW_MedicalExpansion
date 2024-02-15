@@ -32,7 +32,12 @@ private _items = items _unit select {_x isKindOf ["KJW_MedicalExpansion_bloodSam
 		_currentLoaded pushBack _item;
 		_target setVariable [QGVAR(currentLoaded), _currentLoaded, true];
 	};
-	private _action = [format ["item:%1",_x], format ["Load Sample %1", _sampleNumber], "\y\KJW_MedicalExpansion\addons\core\data\vial512full.paa", _childStatement, {true}, {}, _x,"",4,[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
+	private _condition = {
+		params ["_target", "_unit", "_params"];
+		private _spinComplete = _target getVariable [QGVAR(spinComplete), false];
+		!_spinComplete
+	};
+	private _action = [format ["item:%1",_x], format ["Load Sample %1", _sampleNumber], "\y\KJW_MedicalExpansion\addons\core\data\vial512full.paa", _childStatement, _condition, {}, _x,"",4,[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	_actions pushBack [_action, [], _target];
 } forEach _items;
 

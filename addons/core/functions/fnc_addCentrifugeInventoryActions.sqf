@@ -22,7 +22,6 @@ private _actions = [];
 private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 
 {
-	// TODO: Alter _childStatement to display centrifuge gui if its all been spun.
 	private _childStatement = { // Runs on hover.
 		params ["_target", "_unit", "_params"];
 		_params params ["_item"];
@@ -35,6 +34,10 @@ private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 
 			// Display results.
 			[_item] call KJW_MedicalExpansion_Core_fnc_showCentrifuge;
+
+			if (_currentLoaded isEqualTo []) then {
+				_target setVariable [QGVAR(spinComplete), false, true];
+			};
 		} else {
 			// Unload.
 			private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];

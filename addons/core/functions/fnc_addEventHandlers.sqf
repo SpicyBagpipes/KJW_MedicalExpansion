@@ -118,3 +118,14 @@ if (hasInterface) then {
 	[],
 	true
 ] call CBA_fnc_addClassEventHandler;
+
+
+if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
+	[
+		"kat_circulation_setPreferredBloodType",
+		{
+			params ["_unit"];
+			[{params ["_unit"]; [_unit] call FUNC(getBloodType)},[_unit],0.1] call CBA_fnc_waitAndExecute;
+		}
+	] call CBA_fnc_addEventHandler;
+};
