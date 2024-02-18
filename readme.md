@@ -6,6 +6,7 @@ KJW's Medical Expansion is a set of mods which aim to expand the existing ACE me
 * KJW's Medical Expansion: Diseases
 * KJW's Medical Expansion: Toxins
 
+[Documentation](https://kjws-arma-enhancements.gitbook.io/kjws-medical-expansion/)
 
 # Core
 
