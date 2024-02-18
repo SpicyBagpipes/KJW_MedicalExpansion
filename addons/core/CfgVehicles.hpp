@@ -4,7 +4,7 @@ class CfgVehicles {
     {
         displayName = "Centrifuge";
 		GVAR(centrifugeMaxLoad) = 4;
-		GVAR(centrifugeDuration) = 5;
+		GVAR(centrifugeDuration) = 10;
 		editorCategory = "EdCat_Things";
 		editorSubcategory = "EdSubcat_Medicine";
         scope = 2;
