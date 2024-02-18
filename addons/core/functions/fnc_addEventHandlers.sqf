@@ -70,9 +70,11 @@ if (hasInterface) then {
 				private _unconscious = lifeState player == "INCAPACITATED";
 				private _display = uiNamespace getVariable ["KJW_RespawnDisplay",displayNull];
 				if (_unconscious && GVAR(leaveBodyRespawn)) then {
+					private _loadout = [player] call CBA_fnc_getLoadout;
 					private _type = typeOf player;
 					private _group = group player;
 					private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
+					[_unit, _loadout] call CBA_fnc_setLoadout;
 					selectPlayer _unit;
 					_unit setDamage 1;
 					deleteVehicle _unit;
