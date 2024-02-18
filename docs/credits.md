@@ -8,7 +8,8 @@ Medical Expansion is not just me looking through wikipedia! I have had to find a
   \- Importing of the Centrifuge\
   \- Scripting assistance 🦆
 * Marcie\
-  \- Centrifuge model
+  \- Centrifuge model\
+  \- Discord: `marstruc`
 * Sa-Matra\
   \- Assistance in GUI scripting
 * The ACE Discord\
