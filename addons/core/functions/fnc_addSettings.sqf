@@ -41,6 +41,17 @@ private _arr = str [];
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(leaveBodyRespawnNotify),
+	"CHECKBOX",
+	["Leave Body Respawn Notify", "Notify all players that the player did not die and instead ascended to a higher plane."],
+	["KJW's Medical Expansion","Miscellaneous"],
+	false, // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	false // Requires restart
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(kamOverrideBloodGroup),
 	"CHECKBOX",
 	["Override KAT blood group", "Will override KAT blood group with KJW ME:C blood group if enabled"],

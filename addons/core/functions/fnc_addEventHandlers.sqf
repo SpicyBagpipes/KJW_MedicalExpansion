@@ -77,6 +77,9 @@ if (hasInterface) then {
 					_unit setDamage 1;
 					deleteVehicle _unit;
 					_display closeDisplay 2;
+					if (GVAR(leaveBodyRespawnNotify)) then {
+						[QGVAR(leaveBodyRespawnNotification),[]] call CBA_fnc_globalEvent;
+					};
 				} else {
 					player setDamage 1;
 					_display closeDisplay 2;
@@ -122,6 +125,13 @@ if (hasInterface) then {
 	true
 ] call CBA_fnc_addClassEventHandler;
 
+[
+	QGVAR(leaveBodyRespawnNotification),
+	{
+		params [];
+		systemChat "They have ascended to a higher plane of being...";
+	}
+] call CBA_fnc_addEventHandler;
 
 if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 	[
