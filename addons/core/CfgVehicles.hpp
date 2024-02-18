@@ -2,6 +2,7 @@ class CfgVehicles {
 	class Items_base_F; 
     class KJW_Centrifuge_F : Items_base_F
     {
+		author = "Marcie & Jenna";
         displayName = "Centrifuge";
 		GVAR(centrifugeMaxLoad) = 4;
 		GVAR(centrifugeDuration) = 10;
