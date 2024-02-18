@@ -24,6 +24,7 @@
 		
 		if (isPlayer _unit || !local _unit) exitWith {}; //Is handled by unit player EH.
 		private _newPPE = _unit call FUNC(processPPE);
+		_unit call FUNC(hoseInit);
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
 ] call CBA_fnc_addClassEventHandler;
@@ -36,6 +37,7 @@
 		
 		if (!local _unit) exitWith {};
 		private _newPPE = _unit call FUNC(processPPE);
+		_unit call FUNC(hoseInit);
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
 ] call CBA_fnc_addClassEventHandler;
