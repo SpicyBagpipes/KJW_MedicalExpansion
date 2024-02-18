@@ -5,9 +5,9 @@ KJW's Medical Expansion is a set of Arma 3 modifications which aim to provide a 
 
 
 Medical Expansion will eventually comprise of the following mods:\
-\- Medical Expansion: Core\
-\- Radiate\
-\- Diseases\
+\- Core (Released)\
+\- Radiate (Released)\
+\- Diseases (WIP)\
 \- Toxins\
 \- ???\
 \
