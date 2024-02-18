@@ -17,3 +17,4 @@
  */
 
 PREP(processPPE)
+PREP(hoseInit)
