@@ -61,25 +61,28 @@ if (hasInterface) then {
 	] call CBA_fnc_addPlayerEventHandler;
 
 	[true, "OnGameInterrupt", { // Leave body respawn
-		params ["_display"]; 
-		private _buttonRespawn = _display displayctrl 1010;
-		uiNamespace setVariable ["KJW_RespawnDisplay", _display];
-		_buttonRespawn ctrlSetEventHandler ["ButtonClick", toString { 
-			private _unconscious = lifeState player == "INCAPACITATED";
-			private _display = uiNamespace getVariable ["KJW_RespawnDisplay",displayNull];
-			if (_unconscious && GVAR(leaveBodyRespawn)) then {
-				private _type = typeOf player;
-				private _group = group player;
-				private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
-				selectPlayer _unit;
-				_unit setDamage 1;
-				deleteVehicle _unit;
-				_display closeDisplay 2;
-			} else {
-				player setDamage 1;
-				_display closeDisplay 2;
-			};
-		}]; 
+		params ["_display"];
+		[{
+			params["_display"];
+			private _buttonRespawn = _display displayCtrl ([104, 1010] select isMultiplayer);
+			uiNamespace setVariable ["KJW_RespawnDisplay", _display];
+			_buttonRespawn ctrlSetEventHandler ["ButtonClick", toString { 
+				private _unconscious = lifeState player == "INCAPACITATED";
+				private _display = uiNamespace getVariable ["KJW_RespawnDisplay",displayNull];
+				if (_unconscious && GVAR(leaveBodyRespawn)) then {
+					private _type = typeOf player;
+					private _group = group player;
+					private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
+					selectPlayer _unit;
+					_unit setDamage 1;
+					deleteVehicle _unit;
+					_display closeDisplay 2;
+				} else {
+					player setDamage 1;
+					_display closeDisplay 2;
+				};
+			}]; 
+		},[_display],0.1] call CBA_fnc_waitAndExecute; 
 	}] call BIS_fnc_addScriptedEventHandler;
 };
 
