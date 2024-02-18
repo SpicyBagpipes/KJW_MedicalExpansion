@@ -7,7 +7,7 @@ Medical Expansion is not just me looking through wikipedia! I have had to find a
   \- Literally drew her own blood for inventory icons\
   \- Importing of the Centrifuge\
   \- Scripting assistance 🦆
-* Marcie\
+* [Marcie](https://steamcommunity.com/id/marstruc/)\
   \- Centrifuge model\
   \- Discord: `marstruc`
 * Sa-Matra\
