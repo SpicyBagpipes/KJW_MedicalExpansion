@@ -9,7 +9,7 @@ class CfgGlasses {
 	#define BASECLASS G_AirPurifyingRespirator_01_base_F
 
 	class G_AirPurifyingRespirator_01_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_01_nofilter_F: G_AirPurifyingRespirator_01_F {
 		RATING = 1;
@@ -20,21 +20,21 @@ class CfgGlasses {
 	#define BASECLASS G_AirPurifyingRespirator_02_base_F
 	
 	class G_AirPurifyingRespirator_02_black_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_black_nofilter_F: G_AirPurifyingRespirator_02_black_F {
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
 	class G_AirPurifyingRespirator_02_olive_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_olive_nofilter_F: G_AirPurifyingRespirator_02_olive_F {
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
 	class G_AirPurifyingRespirator_02_sand_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_sand_nofilter_F: G_AirPurifyingRespirator_02_sand_F {
 		RATING = 1;

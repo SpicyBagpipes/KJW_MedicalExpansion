@@ -16,6 +16,10 @@
  *  Public: No
  */
 
+GVAR(PPE) = createHashmap;
+GVAR(PPERequirements) = createHashmap;
+
+/*
 [
 	"CAManBase",
 	"slotitemchanged",
@@ -28,6 +32,8 @@
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
 ] call CBA_fnc_addClassEventHandler;
+Doesn't work for some reason, causes game freezes!
+*/
 
 [
 	"CAManBase",
@@ -37,7 +43,6 @@
 		
 		if (!local _unit) exitWith {};
 		private _newPPE = _unit call FUNC(processPPE);
-		_unit call FUNC(hoseInit);
 		_unit setVariable [QGVAR(ppe), _newPPE];
 	}
 ] call CBA_fnc_addClassEventHandler;
@@ -47,21 +52,11 @@
 	{
 		private _newPPE = ace_player call FUNC(processPPE);
 		ace_player setVariable [QGVAR(ppe), _newPPE];
+		ace_player call FUNC(hoseInit); // Check if in arsenal or not
 	},
 	true,
 	[],
 	true
-] call CBA_fnc_addPlayerEventHandler;
-
-GVAR(PPE) = createHashmap;
-GVAR(PPERequirements) = createHashmap;
-
-[
-	"loadout",
-	{
-		if (!isNull (findDisplay 1127001)) exitWith{}; // Check if in arsenal or not
-		ACE_Player call FUNC(hoseInit);
-	}
 ] call CBA_fnc_addPlayerEventHandler;
 
 [

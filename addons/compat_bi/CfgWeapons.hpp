@@ -6,25 +6,25 @@ class CfgWeapons {
 	#define BASECLASS Uniform_Base
 	// NBC Suits
 	class U_C_CBRN_Suit_01_Blue_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_B_CBRN_Suit_01_Wdl_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_B_CBRN_Suit_01_MTP_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_B_CBRN_Suit_01_Tropic_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_C_CBRN_Suit_01_White_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_I_CBRN_Suit_01_AAF_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 	class U_I_E_CBRN_Suit_01_EAF_F: BASECLASS {
-		RATING = 0.9;
+		RATING = 0.95;
 	};
 
 	// Special Purpose Suits
