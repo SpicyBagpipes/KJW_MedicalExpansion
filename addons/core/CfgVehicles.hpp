@@ -9,6 +9,7 @@ class CfgVehicles {
 		editorCategory = "EdCat_Things";
 		editorSubcategory = "EdSubcat_Medicine";
         scope = 2;
+		scopeCurator = 2;
 		model = QPATHTOF(data\centrifuge\centrifuge.p3d);
         armor = 25;
         ace_dragging_canCarry = 1;

@@ -3,6 +3,7 @@ class CfgWeapons {
 	class CBA_MiscItem_ItemInfo;
 	class KJW_MedicalExpansion_IV: ACE_ItemCore {
 		KJW_MedicalExpansion_IVType = 1;
+		ACE_isMedicalItem = 1;
 		scope = 2;
 		displayName = "IV Catheter";
 		descriptionShort = "Used for drawing blood or giving the patient fluids";
