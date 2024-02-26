@@ -13,9 +13,9 @@ class CfgPatches {
             "gm_characters_gc_characters"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         skipWhenMissingDependencies = 1;
 	};
 };

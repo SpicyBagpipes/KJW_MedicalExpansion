@@ -11,9 +11,9 @@ class CfgPatches {
             "A3_Data_F_AoW_Loadorder"
         };
         requiredVersion = 1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
 	};
 };
 

@@ -12,9 +12,9 @@ class CfgPatches {
             "US_M40_Masck_NBC"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         skipWhenMissingDependencies = 1;
 	};
 };

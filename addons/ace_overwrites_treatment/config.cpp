@@ -16,9 +16,9 @@ class CfgPatches {
             "A3_Data_F_AoW_Loadorder"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         ace_overwrites_status = 1;
     };
 };
@@ -34,9 +34,9 @@ class CfgPatches {
             "A3_Data_F_AoW_Loadorder"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
 	};
 };
 

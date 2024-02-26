@@ -12,9 +12,9 @@ class CfgPatches {
             "aceax_compat_usp"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         skipWhenMissingDependencies = 1;
 	};
 };

@@ -18,9 +18,9 @@ class CfgPatches {
             "KJW_MedicalExpansion_Core"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
 	};
 };
 

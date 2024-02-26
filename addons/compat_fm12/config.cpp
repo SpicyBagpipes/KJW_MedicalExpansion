@@ -12,9 +12,9 @@ class CfgPatches {
             "fm12_respirator"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         skipWhenMissingDependencies = 1;
 	};
 };

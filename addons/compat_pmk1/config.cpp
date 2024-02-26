@@ -12,9 +12,9 @@ class CfgPatches {
             "PMK1_Gas_mask"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {};
+		weapons[] = {};
+		vehicles[] = {};
         skipWhenMissingDependencies = 1;
 	};
 };
