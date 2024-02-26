@@ -13,9 +13,9 @@ class CfgPatches {
             "ace_interaction"
         };
         requiredVersion=1;
-		units[] = {""};
-		weapons[] = {""};
-		vehicles[] = {""};
+		units[] = {"KJW_Centrifuge_F"};
+		weapons[] = {};
+		vehicles[] = {};
 	};
 };
 
