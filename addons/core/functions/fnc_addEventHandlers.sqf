@@ -70,18 +70,7 @@ if (hasInterface) then {
 				private _unconscious = lifeState player == "INCAPACITATED";
 				private _display = uiNamespace getVariable ["KJW_RespawnDisplay",displayNull];
 				if (_unconscious && GVAR(leaveBodyRespawn)) then {
-					private _loadout = [player] call CBA_fnc_getLoadout;
-					private _type = typeOf player;
-					private _group = group player;
-					private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
-					[_unit, _loadout] call CBA_fnc_setLoadout;
-					selectPlayer _unit;
-					_unit setDamage 1;
-					deleteVehicle _unit;
-					_display closeDisplay 2;
-					if (GVAR(leaveBodyRespawnNotify)) then {
-						[QGVAR(leaveBodyRespawnNotification),[]] call CBA_fnc_globalEvent;
-					};
+					[QGVAR(leaveBodyRespawn), [], _obj] call CBA_fnc_targetEvent;
 				} else {
 					player setDamage 1;
 					_display closeDisplay 2;
@@ -109,6 +98,28 @@ if (hasInterface) then {
 		[_data,"remove"] call FUNC(handleData);
 	}
 ] call CBA_fnc_addEventHandler;
+
+[
+	QGVAR(leaveBodyRespawn),
+	{
+		private _loadout = [player] call CBA_fnc_getLoadout;
+		private _type = typeOf player;
+		private _group = group player;
+		if (!GVAR(leaveBodyRespawnJoinGroup)) then {
+			[player] joinSilent grpNull;
+		};
+		private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
+		[_unit, _loadout] call CBA_fnc_setLoadout;
+		selectPlayer _unit;
+		_unit setDamage 1;
+		deleteVehicle _unit;
+		_display closeDisplay 2;
+		if (GVAR(leaveBodyRespawnNotify)) then {
+			[QGVAR(leaveBodyRespawnNotification),[]] call CBA_fnc_globalEvent;
+		};
+	}
+] call CBA_fnc_addEventHandler;
+
 
 [
 	"CAManBase",

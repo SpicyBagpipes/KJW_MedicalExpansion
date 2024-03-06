@@ -24,6 +24,7 @@ if (isNil QGVAR(fluidData)) then {
 GVAR(defaultBloodInfo) = [["RBC", 24],["WBC", 24],["Platelet", 24]]; //Strength, 0-24 as it is 1 per 250ml, 24 is 6000/250, 6000 is max blood volume in ace medical
 
 call FUNC(addEventHandlers);
+call FUNC(module_registerModules);
 
 if (hasInterface) then {
 	[QGVAR(dataRequest),[player]] call CBA_fnc_serverEvent;

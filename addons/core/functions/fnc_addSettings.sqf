@@ -52,6 +52,17 @@ private _arr = str [];
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(leaveBodyRespawnJoinGroup),
+	"CHECKBOX",
+	["Leave Body Respawn Join Group", "Make the AI left behind join your group"],
+	["KJW's Medical Expansion","Miscellaneous"],
+	true, // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	false // Requires restart
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(kamOverrideBloodGroup),
 	"CHECKBOX",
 	["Override KAT blood group", "Will override KAT blood group with KJW ME:C blood group if enabled"],
