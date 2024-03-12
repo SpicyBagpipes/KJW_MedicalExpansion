@@ -24,7 +24,7 @@ params ["_patient", "_bodyPart", "_classname", "_selectedFluid"];
 private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 if (_bloodVolume >= DEFAULT_BLOOD_VOLUME) exitWith {};
 
-private _partIndex = ALL_BODY_PARTS find toLower _bodyPart;
+private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 
 // Get blood data from fluid bag.
 private _bloodData = createHashmap;

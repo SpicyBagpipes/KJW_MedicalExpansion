@@ -10,7 +10,7 @@ class ACE_Medical_Treatment_Actions {
 		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) >= 1) && (_medic getVariable ['KJW_MedicalExpansion_Core_SelectedFluid',''] isNotEqualTo '') && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		callbackSuccess = QEFUNC(core,pushIV);
 		callbackStart = QEFUNC(core,showBloodLabel);
-		treatmentTime = "5";
+		treatmentTime = "7";
 		litter[] = {};
 	};
 	class Transfusion_500: ApplyTourniquet { // Needed for KAM
@@ -19,6 +19,7 @@ class ACE_Medical_Treatment_Actions {
 		items[] = {"KJW_MedicalExpansion_500_TransfusionKit"};
 		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) >= 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.5) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		callbackSuccess = QEFUNC(core,drawBlood);
+		treatmentTime = "15";
 	};
 	class Transfusion_250: ApplyTourniquet { // Needed for KAM
 		displayName = "Draw 250mL Blood";
@@ -26,6 +27,7 @@ class ACE_Medical_Treatment_Actions {
 		items[] = {"KJW_MedicalExpansion_250_TransfusionKit"};
 		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) >= 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.25) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		callbackSuccess = QEFUNC(core,drawBlood);
+		treatmentTime = "10";
 	};
 	class Sample_10: ApplyTourniquet { // Needed for KAM
 		displayName = "Draw 10mL Blood Sample";
@@ -33,6 +35,7 @@ class ACE_Medical_Treatment_Actions {
 		items[] = {"KJW_MedicalExpansion_SampleKit"};
 		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) >= 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.01) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		callbackSuccess = QEFUNC(core,drawBlood);
+		treatmentTime = "4";
 	};
 
 	// Overwrites:
