@@ -32,3 +32,10 @@ class Extended_PreInit_EventHandlers {
 		init = QUOTE(call compileScript [QQPATHTOF(XEH_PreInit.sqf)]);
 	};
 };
+
+class CfgWeapons {
+    class ACE_ItemCore;
+    class kat_IO_FAST: ACE_ItemCore {
+        KJW_MedicalExpansion_IVType = 2;
+    };
+};

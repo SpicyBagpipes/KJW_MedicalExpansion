@@ -9,6 +9,12 @@ class MOD_NAME {
 			displayColourApplied[] = {0.62,0.361,0.929,1};
 			handlingAmount = 1;
 		};
+		class 2: 0 {
+			displayName = "IO";
+			displayStringApplied = "IO Applied";
+			displayColourApplied[] = {0.62,0.561,0.929,1};
+			handlingAmount = 2;
+		};
 	};
 	class BloodProperties {
 		class rbc {
