@@ -51,7 +51,7 @@ if (!isMultiplayer || !isPlayer _unit) exitWith {
 
     if (GVAR(KAMLoaded)) then {
         if (GVAR(kamOverrideBloodGroup)) then {
-            private _convertedType = switch (_bloodType) do {
+            private _convertedType = switch (_bloodType) do { //[0, 1, 2, 3, 4, 5, 6, 7] -> [O+, O-, A+, A-, B+, B-, AB+, AB-]
                 case 0: {"O"};
                 case 1: {"O_N"};
                 case 2: {"A"};
@@ -103,7 +103,7 @@ _type = switch (true) do {
 
 if (GVAR(KAMLoaded)) then {
     if (GVAR(kamOverrideBloodGroup)) then {
-        private _convertedType = switch (_type) do {
+        private _convertedType = switch (_type) do { //[0, 1, 2, 3, 4, 5, 6, 7] -> [O+, O-, A+, A-, B+, B-, AB+, AB-]
             case 0: {"O"};
             case 1: {"O_N"};
             case 2: {"A"};

@@ -24,7 +24,7 @@ class ACE_Medical_Treatment_Actions {
 		displayName = "Push Selected Fluid";
 		displayNameProgress = "Pushing Fluid...";
 		items[] = {};
-		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1) && (_medic getVariable ['KJW_MedicalExpansion_Core_SelectedFluid',''] isNotEqualTo '') && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
+		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) != 0) && (_medic getVariable ['KJW_MedicalExpansion_Core_SelectedFluid',''] isNotEqualTo '') && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		treatmentTime = "7";
 		callbackSuccess = QEFUNC(core,pushIV);
 		callbackStart = QEFUNC(core,showBloodLabel);
@@ -33,7 +33,7 @@ class ACE_Medical_Treatment_Actions {
 		displayName = "Draw 500mL Blood";
 		displayNameProgress = "Drawing Blood...";
 		items[] = {"KJW_MedicalExpansion_500_TransfusionKit"};
-		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.5) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
+		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) != 0) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.5) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		treatmentTime = "15";
 		callbackSuccess = QEFUNC(core,drawBlood);
 	};
@@ -41,7 +41,7 @@ class ACE_Medical_Treatment_Actions {
 		displayName = "Draw 250mL Blood";
 		displayNameProgress = "Drawing Blood...";
 		items[] = {"KJW_MedicalExpansion_250_TransfusionKit"};
-		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.25) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
+		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) != 0) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.25) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		treatmentTime = "10";
 		callbackSuccess = QEFUNC(core,drawBlood);
 	};
@@ -49,7 +49,7 @@ class ACE_Medical_Treatment_Actions {
 		displayName = "Draw 10mL Blood Sample";
 		displayNameProgress = "Drawing Blood Sample...";
 		items[] = {"KJW_MedicalExpansion_SampleKit"};
-		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) isEqualTo 1) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.01) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
+		condition = "(([_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_hasIV) != 0) && (_patient getVariable ['ace_medical_bloodVolume', 6] > 0.01) && [_patient, _bodyPart] call KJW_MedicalExpansion_Core_fnc_canAddNewMedication";
 		treatmentTime = "4";
 		callbackSuccess = QEFUNC(core,drawBlood);
 	};

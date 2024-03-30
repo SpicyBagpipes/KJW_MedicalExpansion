@@ -155,3 +155,15 @@ if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 		}
 	] call CBA_fnc_addEventHandler;
 };
+
+[
+	"ace_medical_treatment_fullHealLocal",
+	{
+		params ["_unit"];
+		private _bloodType = [_unit] call FUNC(getBloodType);
+		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
+		_bloodInfo set ["bloodType", _bloodType];
+		_bloodInfo set ["owner", _unit];
+		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
+	}
+] call CBA_fnc_addEventHandler;

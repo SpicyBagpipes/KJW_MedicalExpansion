@@ -128,25 +128,7 @@ if (_cannula isNotEqualTo 0) then {
     _entries pushBack ["No catheter", _nonissueColor];
 };
 
-// END FUNCTION EDITS ///////////////////////////////////////////////////////////////////////////////////// BEGIN FUNCTION EDITS /////////////////////////////////////////////////////////////////////////////////
-
-private _IVs = _target getVariable ["KJW_MedicalExpansion_Core_IV",[0,0,0,0,0,0]];
-private _cannula = _IVs#_selectionN;
-
-private _cannulationString = getText (configFile >> "KJW_MedicalExpansion" >> "IVs" >> str _cannula >> "displayStringApplied");
-private _cannulationColour = getArray (configFile >> "KJW_MedicalExpansion" >> "IVs" >> str _cannula >> "displayColourApplied");
-_cannulationColour = if (_cannulationColour isEqualTo []) then {[0.62,0.361,0.929,1]} else {_cannulationColour};
-if (_cannula isNotEqualTo 0) then {
-	if (_cannulationString isEqualTo "") then {
-		_entries pushBack ["IV Applied", _cannulationColour];
-	} else {
-		_entries pushBack [_cannulationString, _cannulationColour];
-	};
-} else {
-    _entries pushBack ["No catheter", _nonissueColor];
-};
-
-// END FUNCTION EDITS ///////////////////////////////////////////////////////////////////////////////////
+// END FUNCTION EDITS /////////////////////////////////////////////////////////////////////////////////////
 
 // Indicate the amount of pain the unit is in
 if (_target call EFUNC(common,isAwake)) then {
