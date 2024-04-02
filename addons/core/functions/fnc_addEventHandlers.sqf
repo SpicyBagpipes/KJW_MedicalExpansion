@@ -55,7 +55,7 @@ if (hasInterface) then {
 		{
 			private _fluid = player getVariable [QGVAR(selectedFluid),""];
 			if (!(_fluid in items player) && (_fluid isNotEqualTo "")) then {
-				player setVariable [QGVAR(selectedFluid), "", true];
+				[{player setVariable [QGVAR(selectedFluid), "", true];}, [], 0.5] call CBA_fnc_waitAndExecute;
 			};
 		}
 	] call CBA_fnc_addPlayerEventHandler;
