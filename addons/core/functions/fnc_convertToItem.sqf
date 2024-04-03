@@ -23,4 +23,4 @@ params["_key", "_unit"];
 private _info = GVAR(fluidData) get _key;
 _info params ["_baseClass", "_bloodData"];
 _unit removeItem _baseClass;
-_unit addItem _key;
+[_unit, _key, true] call CBA_fnc_addItem;
