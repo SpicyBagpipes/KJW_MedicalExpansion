@@ -55,7 +55,7 @@ if (hasInterface) then {
 		{
 			private _fluid = player getVariable [QGVAR(selectedFluid),""];
 			if (!(_fluid in items player) && (_fluid isNotEqualTo "")) then {
-				[{player setVariable [QGVAR(selectedFluid), "", true];}, [], 0.5] call CBA_fnc_waitAndExecute;
+				player setVariable [QGVAR(selectedFluid), "", true];
 			};
 		}
 	] call CBA_fnc_addPlayerEventHandler;
@@ -130,7 +130,6 @@ if (hasInterface) then {
 		private _bloodType = [_unit] call FUNC(getBloodType);
 		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
 		_bloodInfo set ["bloodType", _bloodType];
-		_bloodInfo set ["owner", _unit];
 		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 	},
 	true,
@@ -163,7 +162,6 @@ if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 		private _bloodType = [_unit] call FUNC(getBloodType);
 		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
 		_bloodInfo set ["bloodType", _bloodType];
-		_bloodInfo set ["owner", _unit];
 		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 	}
 ] call CBA_fnc_addEventHandler;
