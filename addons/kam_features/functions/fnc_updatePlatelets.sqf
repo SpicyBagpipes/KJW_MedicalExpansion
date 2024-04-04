@@ -31,5 +31,5 @@ private _plateletMultiplier = 24/(_plateletCount min 24);
 private _roll = random _timeToTake*_deltaT;
 
 if (_roll < _plateletMultiplier*_deltaT) then {
-	_patient setVariable ["kat_pharma_coagulationFactor", _KAMCoagulation - 1, true];
+	_patient setVariable ["kat_pharma_coagulationFactor", (_KAMCoagulation - 1) max 0, true];
 };

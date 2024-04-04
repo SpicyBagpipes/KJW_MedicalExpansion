@@ -31,5 +31,5 @@ private _haemoMultiplier = 24/(_haemoCount min 24);
 private _roll = random _timeToTake*_deltaT;
 
 if (_roll < _haemoMultiplier*_deltaT) then {
-	_patient setVariable ["kat_breathing_airwayStatus", _KAMSpO2 - 1, true];
+	_patient setVariable ["kat_breathing_airwayStatus", (_KAMSpO2 - 1) max 0, true];
 };
