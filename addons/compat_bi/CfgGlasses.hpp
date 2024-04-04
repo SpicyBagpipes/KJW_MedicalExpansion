@@ -12,6 +12,7 @@ class CfgGlasses {
 		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_01_nofilter_F: G_AirPurifyingRespirator_01_F {
+		ace_arsenal_uniqueBase = "G_AirPurifyingRespirator_01_F";
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
@@ -23,6 +24,7 @@ class CfgGlasses {
 		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_black_nofilter_F: G_AirPurifyingRespirator_02_black_F {
+		ace_arsenal_uniqueBase = "G_AirPurifyingRespirator_02_black_F";
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
@@ -30,6 +32,7 @@ class CfgGlasses {
 		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_olive_nofilter_F: G_AirPurifyingRespirator_02_olive_F {
+		ace_arsenal_uniqueBase = "G_AirPurifyingRespirator_02_olive_F";
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
@@ -37,6 +40,7 @@ class CfgGlasses {
 		RATING = 0.95;
 	};
 	class G_AirPurifyingRespirator_02_sand_nofilter_F: G_AirPurifyingRespirator_02_sand_F {
+		ace_arsenal_uniqueBase = "G_AirPurifyingRespirator_02_sand_F";
 		RATING = 1;
 		REQUIREMENTS = {"B_CombinationUnitRespirator_01_F"};
 	};
