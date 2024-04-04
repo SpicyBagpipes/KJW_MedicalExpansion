@@ -165,3 +165,11 @@ if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 	}
 ] call CBA_fnc_addEventHandler;
+
+player addEventHandler ["Respawn",{
+	params ["_unit"];
+	private _bloodType = [_unit] call FUNC(getBloodType);
+	private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
+	_bloodInfo set ["bloodType", _bloodType];
+	_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
+}];
