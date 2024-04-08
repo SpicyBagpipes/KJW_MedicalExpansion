@@ -26,6 +26,7 @@ _info params ["_recipientInfo", "_donorInfo"];
 
 private _typesCompatible = 
 {
+	if (!(GVAR(checkRH))) then {if (_forEachIndex == 2) then {continueWith true}};
 	if (_donorInfo#_forEachIndex && {!(_recipientInfo#_forEachIndex)}) exitWith {false};
 	true
 } forEach _recipientInfo;
