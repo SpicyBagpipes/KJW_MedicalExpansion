@@ -23,6 +23,8 @@ if (isNil QGVAR(fluidData)) then {
 
 GVAR(defaultBloodInfo) = [["RBC", 24],["WBC", 24],["Platelet", 24]]; //Strength, 0-24 as it is 1 per 250ml, 24 is 6000/250, 6000 is max blood volume in ace medical
 
+GVAR(KAMLoaded) = isClass (configFile >> "CfgPatches" >> "kat_main");
+
 call FUNC(addEventHandlers);
 call FUNC(module_registerModules);
 
@@ -56,5 +58,3 @@ GVAR(bloodTransmissiveInfo) = [
 	"WBC",
 	"Platelet"
 ]; //Array of all keys that spread across the blood. All bloodinfo is sent. These also tick down when bleeding.
-
-GVAR(KAMLoaded) = isClass (configFile >> "CfgPatches" >> "kat_main");
