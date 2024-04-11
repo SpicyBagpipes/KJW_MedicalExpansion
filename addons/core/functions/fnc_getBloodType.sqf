@@ -25,7 +25,6 @@ params ["_unit"];
 
 private _type = 0;
 private _hasType = _unit getVariable [QGVAR(bloodType),0];
-if (_hasType isNotEqualTo 0) exitWith {_hasType};
 //No blood type yet assigned.
 if (!isMultiplayer || !isPlayer _unit) exitWith {
 	//Is singleplayer or is not a player.
@@ -86,7 +85,7 @@ if (!isMultiplayer || !isPlayer _unit) exitWith {
 
 //Is player and is multiplayer.
 
-private _uid = getPlayerUID player select [11,6]; //Arma cannot handle much longer strings.
+private _uid = getPlayerUID _unit select [11,6]; //Arma cannot handle much longer strings.
 _uid = parseNumber _uid;
 private _random = _uid random 1000;
 
