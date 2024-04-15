@@ -22,7 +22,8 @@ params ["_patient", "_deltaT"];
 private _bloodInfo = _patient getVariable [QEGVAR(core,bloodInfo), createHashmap];
 private _KAMSpO2 = _patient getVariable ["kat_breathing_airwayStatus", 100];
 private _haemoCount = _bloodInfo get "RBC"; // 0-24 value, where 24 is maximum.
-private _timeToTake = 2.5*_haemoCount;
+_haemoCount = _haemoCount max 0.01;
+private _timeToTake = _haemoCount;
 
 if (_haemoCount > 18) exitWith {};
 

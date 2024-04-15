@@ -22,7 +22,8 @@ params ["_patient", "_deltaT"];
 private _bloodInfo = _patient getVariable [QEGVAR(core,bloodInfo), createHashmap];
 private _KAMCoagulation = (_patient getVariable ["kat_pharma_coagulationFactor", 10]) max 1;
 private _plateletCount = _bloodInfo get "Platelet"; // 0-24 value, where 24 is maximum.
-private _timeToTake = 1.5*_plateletCount;
+_plateletCount = _plateletCount max 0.01;
+private _timeToTake = _plateletCount;
 
 if (_plateletCount > 18) exitWith {};
 
