@@ -173,3 +173,27 @@ player addEventHandler ["Respawn",{
 	_bloodInfo set ["bloodType", _bloodType];
 	_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 }];
+
+[
+	"ace_medical_gui_updateInjuryListGeneral",
+	{
+		if (GVAR(KAMLoaded)) exitWith {};
+		params ["_ctrl", "_target", "_selectionN", "_entries"];
+		private _nonissueColor = [1, 1, 1, 0.33];
+		private _IVs = _target getVariable ["KJW_MedicalExpansion_Core_IV",[0,0,0,0,0,0]];
+		private _cannula = _IVs#_selectionN;
+
+		private _cannulationString = getText (configFile >> "KJW_MedicalExpansion" >> "IVs" >> str _cannula >> "displayStringApplied");
+		private _cannulationColour = getArray (configFile >> "KJW_MedicalExpansion" >> "IVs" >> str _cannula >> "displayColourApplied");
+		_cannulationColour = if (_cannulationColour isEqualTo []) then {[0.62,0.361,0.929,1]} else {_cannulationColour};
+		if (_cannula isNotEqualTo 0) then {
+			if (_cannulationString isEqualTo "") then {
+				_entries pushBack ["IV Applied", _cannulationColour];
+			} else {
+				_entries pushBack [_cannulationString, _cannulationColour];
+			};
+		} else {
+			_entries pushBack ["No catheter", _nonissueColor];
+		};
+	}
+] call CBA_fnc_addEventHandler;
