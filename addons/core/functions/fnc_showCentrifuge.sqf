@@ -43,6 +43,7 @@ private _info = GVAR(fluidData) get _bloodKey;
 	_lb lbAdd "";
     private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "bloodProperties" >> _x >> "displayName", _x);
 	_lb lbSetText [_forEachIndex, _str];
+    _lb lbSetTextRight [_forEachIndex, "0% "];
     if (_x == "bloodType") then {
         private _type = ["O+","O-","A+","A-","B+","B-","AB+","AB-"] select _y;
         _lb lbSetTextRight [_forEachIndex, _type];
