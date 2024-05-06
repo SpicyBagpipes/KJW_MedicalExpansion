@@ -18,6 +18,8 @@
 
 params ["_unit"];
 
+if !(local _unit) exitWith {};
+
 private _sfx = selectRandom [QPATHTOF(data\sfx\cough_1.wss),QPATHTOF(data\sfx\cough_2.wss),QPATHTOF(data\sfx\cough_3.wss),QPATHTOF(data\sfx\cough_4.wss)];
 
 playSound3D [_sfx, _unit];
@@ -26,7 +28,7 @@ if (!GVAR(reducedMotion) && _unit == ace_player) then {
 	[
 		{
 			
-			addCamShake [10, 2, 20];
+			addCamShake [5, 2, 20];
 		},
 		[],
 		0.2

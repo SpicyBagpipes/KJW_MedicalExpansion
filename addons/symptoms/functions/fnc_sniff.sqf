@@ -18,6 +18,8 @@
 
 params ["_unit"];
 
+if !(local _unit) exitWith {};
+
 private _sfx = selectRandom [QPATHTOF(data\sfx\sniff_1.wss),QPATHTOF(data\sfx\sniff_2.wss)];
 
 playSound3D [_sfx, _unit];
