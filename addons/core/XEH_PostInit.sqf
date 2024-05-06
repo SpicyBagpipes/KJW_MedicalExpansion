@@ -58,3 +58,5 @@ GVAR(bloodTransmissiveInfo) = [
 	"WBC",
 	"Platelet"
 ]; //Array of all keys that spread across the blood. All bloodinfo is sent. These also tick down when bleeding.
+
+[QGVAR(postInitialised),[]] call CBA_fnc_localEvent;
