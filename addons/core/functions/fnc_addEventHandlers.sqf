@@ -70,7 +70,7 @@ if (hasInterface) then {
 				private _unconscious = lifeState player == "INCAPACITATED";
 				private _display = uiNamespace getVariable ["KJW_RespawnDisplay",displayNull];
 				if (_unconscious && GVAR(leaveBodyRespawn)) then {
-					[QGVAR(leaveBodyRespawn), [], _obj] call CBA_fnc_targetEvent;
+					[QGVAR(leaveBodyRespawn), [], player] call CBA_fnc_targetEvent;
 				} else {
 					player setDamage 1;
 					_display closeDisplay 2;
@@ -113,7 +113,6 @@ if (hasInterface) then {
 		selectPlayer _unit;
 		_unit setDamage 1;
 		deleteVehicle _unit;
-		_display closeDisplay 2;
 		if (GVAR(leaveBodyRespawnNotify)) then {
 			[QGVAR(leaveBodyRespawnNotification),[]] call CBA_fnc_globalEvent;
 		};
