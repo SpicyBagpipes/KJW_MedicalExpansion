@@ -28,7 +28,7 @@ private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 		private _spinComplete = _target getVariable [QGVAR(spinComplete), false];
 		if (_spinComplete) then {
 			// Remove item with destruction.
-			private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
+			_currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 			_currentLoaded deleteAt (_currentLoaded find _item);
 			_target setVariable [QGVAR(currentLoaded), _currentLoaded, true];
 
@@ -40,7 +40,7 @@ private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 			};
 		} else {
 			// Unload.
-			private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
+			_currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 			_currentLoaded deleteAt (_currentLoaded find _item);
 			_target setVariable [QGVAR(currentLoaded), _currentLoaded, true];
 			[_unit, _item] call CBA_fnc_addItem;
