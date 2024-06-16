@@ -57,6 +57,5 @@ class ACE_Medical_Treatment_Actions {
 	// Overwrites:
 	class CPR: BasicBandage {
 		condition = "([_medic, _patient] call ace_medical_treatment_fnc_canCPR) && (!KJW_MedicalExpansion_Core_vestBlocksCPR || [_patient] call KJW_MedicalExpansion_Core_fnc_getVestProtection < 10)";
-		conditionWithKAM = "(([_medic, _patient] call ace_medical_treatment_fnc_canCPR) && !(_patient getVariable ['kat_airway_recovery', false])) && (!KJW_MedicalExpansion_Core_vestBlocksCPR || [_patient] call KJW_MedicalExpansion_Core_fnc_getVestProtection < 10)"
 	};
 };
