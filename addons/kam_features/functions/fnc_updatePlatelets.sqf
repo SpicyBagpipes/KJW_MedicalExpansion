@@ -19,6 +19,8 @@
 
 params ["_patient", "_deltaT"];
 
+if (!GVAR(doPlateleteffects)) exitWith {};
+
 private _bloodInfo = _patient getVariable [QEGVAR(core,bloodInfo), createHashmap];
 private _KAMCoagulation = (_patient getVariable ["kat_pharma_coagulationFactor", 10]) max 1;
 private _plateletCount = _bloodInfo get "Platelet"; // 0-24 value, where 24 is maximum.

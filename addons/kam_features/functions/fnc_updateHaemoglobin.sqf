@@ -19,6 +19,8 @@
 
 params ["_patient", "_deltaT"];
 
+if (!GVAR(doRBCeffects)) exitWith {};
+
 private _bloodInfo = _patient getVariable [QEGVAR(core,bloodInfo), createHashmap];
 private _KAMSpO2 = _patient getVariable ["kat_breathing_airwayStatus", 100];
 private _haemoCount = _bloodInfo get "RBC"; // 0-24 value, where 24 is maximum.

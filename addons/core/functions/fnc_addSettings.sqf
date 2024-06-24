@@ -74,6 +74,28 @@ private _arr = str [];
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(doRBCeffects),
+	"CHECKBOX",
+	["Do RBC Effects", "Causes SpO2 to drop if RBC count is low"],
+	["KJW's Medical Expansion", "Miscellaneous"],
+	false, // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	true // Requires restart
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(doPlateleteffects),
+	"CHECKBOX",
+	["Do Platelet Effects", "Causes clotting to be harder if Platelet count is low"],
+	["KJW's Medical Expansion", "Miscellaneous"],
+	false, // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	true // Requires restart
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(checkRH),
 	"CHECKBOX",
 	["Check Blood RH", "Disable to make + blood types compatible with - and vice versa"],
