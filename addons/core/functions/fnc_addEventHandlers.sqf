@@ -108,6 +108,9 @@ if (hasInterface) then {
 		if (!GVAR(leaveBodyRespawnJoinGroup)) then {
 			[player] joinSilent grpNull;
 		};
+		if (GVAR(leaveBodyRespawnComatose)) then {
+			[player, true, 1e10] call ace_medical_fnc_setUnconscious;
+		};
 		private _unit = _group createUnit [_type, [0,0,0], [], 0, "NONE"];
 		[_unit, _loadout] call CBA_fnc_setLoadout;
 		selectPlayer _unit;
