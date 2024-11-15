@@ -40,6 +40,7 @@ _lb ctrlSetPosition [0.815, 0.23, 0.37, 0.44];
 private _info = GVAR(fluidData) get _bloodKey;
 
 {
+    if (_x == "medications") then {systemChat "haiii"; continue}; // Need to add specific handling for medications
 	_lb lbAdd "";
     private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "bloodProperties" >> _x >> "displayName", _x);
 	_lb lbSetText [_forEachIndex, _str];
@@ -53,4 +54,13 @@ private _info = GVAR(fluidData) get _bloodKey;
 	    _lb lbSetTextRight [_forEachIndex, str round (_y/24*100) + "% "];
     };
 } forEach _info#1;
+
+{
+    params ["_medicationName", "_dose"];
+    _lb lbAdd "";
+    private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "displayName", _medicationName);
+    private _doseMeasurement = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "doseMeasurement", _medicationName);
+    _lb lbSetText [_forEachIndex, _str];
+    _lb lbSetTextRight [_forEachIndex, _dose + " " + _doseMeasurement + " "];
+} forEach (_info#1 get "medications");
 _lb ctrlCommit 0;

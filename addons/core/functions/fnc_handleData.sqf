@@ -7,6 +7,7 @@
  *  Arguments:
  *  0: Data <ARRAY>
  *  1: Addition <STRING>
+ *  2: Unit <OBJECT>
  * 
  *  Return Value:
  *  0: New ID <STRING>
@@ -18,13 +19,20 @@
  */
 
 
-params ["_data", "_addition"];
+params ["_data", "_addition", "_unit"];
 
 //Example _data array: [classname,[bloodinfo (hashmap)]]
 //Bloodinfo should probably be hashmap.
 
 private _fluidData = GVAR(fluidData);
 private _classname = _data#0;
+
+private _bloodInfo = _data#1;
+if (_classname isKindOf "KJW_MedicalExpansion_bloodSample") then {
+	private _medications =+ _unit getVariable ["ace_medical_medications", []]
+	_bloodInfo set ["medications",_medications];
+};
+
 if (count _fluidData isEqualTo 0 && _addition == "add") exitWith {
 	//Does not exist, create.
 	private _newKey = _classname + "_1";
