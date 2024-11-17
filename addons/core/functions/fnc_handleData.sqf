@@ -29,7 +29,7 @@ private _classname = _data#0;
 
 private _bloodInfo = _data#1;
 if (_classname isKindOf "KJW_MedicalExpansion_bloodSample") then {
-	private _medications =+ _unit getVariable ["ace_medical_medications", []]
+	private _medications =+ _unit getVariable ["ace_medical_medications", []];
 	_bloodInfo set ["medications",_medications];
 };
 
