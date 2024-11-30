@@ -90,6 +90,7 @@ class MOD_NAME {
 			displayName = "Morphine";
 			doseMultiplier = 5;
 			doseMeasurement = "mg";
+			showInCentrifuge = 1;
 		};
 		class Epinephrine: Morphine {
 			displayName = "Epinephrine";
