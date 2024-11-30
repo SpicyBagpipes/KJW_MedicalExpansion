@@ -19,7 +19,7 @@
                     description = QUOTE(##arg##);\
 		        };
 
-#define PATCHES values[] += {"a_neg_blk","a_neg_mc","a_pos_blk","a_pos_mc","ab_neg_blk","ab_neg_mc","ab_pos_blk","ab_pos_mc","b_neg_blk","b_neg_mc","b_pos_blk","b_pos_mc","o_neg_blk","o_neg_mc","o_pos_blk","o_pos_mc", "med_blk", "med_mc"};\
+#define PATCHES values[] += {"a_neg_blk","a_neg_mc","a_pos_blk","a_pos_mc","ab_neg_blk","ab_neg_mc","ab_pos_blk","ab_pos_mc","b_neg_blk","b_neg_mc","b_pos_blk","b_pos_mc","o_neg_blk","o_neg_mc","o_pos_blk","o_pos_mc", "med_blk", "med_mc", "eod_blk", "eod_mc"};\
                 BLOODGROUP(a_neg_blk)\
 				BLOODGROUP(a_neg_mc)\
                 BLOODGROUP(a_pos_blk)\
@@ -37,4 +37,6 @@
                 BLOODGROUP(o_pos_blk)\
                 BLOODGROUP(o_pos_mc)\
                 IDENT(med_blk)\
-                IDENT(med_mc)
+                IDENT(med_mc)\
+                IDENT(eod_blk)\
+                IDENT(eod_mc)
