@@ -28,9 +28,13 @@ private _fluidData = GVAR(fluidData);
 private _classname = _data#0;
 
 private _bloodInfo = _data#1;
-if (_classname isKindOf "KJW_MedicalExpansion_bloodSample") then {
-	private _medications =+ _unit getVariable ["ace_medical_medications", []];
-	_bloodInfo set ["medications",_medications];
+if (_classname == "KJW_MedicalExpansion_bloodSample") then {
+	private _medications =+ (_unit getVariable ["ace_medical_medications", []]);
+	private _medicationsFormatted = [];
+	{
+		_medicationsFormatted pushBack ([_x#0, [_unit, _x#0] call ace_medical_status_fnc_getMedicationCount]);
+	} forEach _medications;
+	_bloodInfo set ["medications",_medicationsFormatted];
 };
 
 if (count _fluidData isEqualTo 0 && _addition == "add") exitWith {
