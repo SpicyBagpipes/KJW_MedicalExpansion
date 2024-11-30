@@ -46,7 +46,7 @@ if (hasInterface) then {
 				systemChat "This unit had no blood information as it does not inherit from CAManBase. You should never see this error message. Please contact the author of the mod which adds this unit.";
 				//Above message *should* never be seen.
 			};
-			[QGVAR(dataAdd),[[_bloodBag, _bloodInfo], _medic]] call CBA_fnc_globalEvent;
+			[QGVAR(dataAdd),[[_bloodBag, _bloodInfo], _medic, _unit]] call CBA_fnc_globalEvent;
 		}
 	] call CBA_fnc_addEventHandler;
 
@@ -83,10 +83,10 @@ if (hasInterface) then {
 [
 	QGVAR(dataAdd),
 	{
-		params ["_data","_unit"];
-		private _id = [_data,"add"] call FUNC(handleData);
-		if (_unit isEqualTo player) then {
-			[_id, _unit] call FUNC(convertToItem);
+		params ["_data","_medic", "_unit"];
+		private _id = [_data,"add",_unit] call FUNC(handleData);
+		if (_medic isEqualTo player) then {
+			[_id, _medic] call FUNC(convertToItem);
 		};
 	}
 ] call CBA_fnc_addEventHandler;

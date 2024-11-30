@@ -1,5 +1,6 @@
 class MOD_NAME {
-	class IVs {
+	class None {};
+	class IVs: None {
 		class 0 {
 			UNUSED = 1;
 		};
@@ -16,72 +17,83 @@ class MOD_NAME {
 			handlingAmount = 2;
 		};
 	};
-	class BloodProperties {
-		class rbc {
+	class BloodProperties: None {
+		class rbc: None {
 			displayName = "Red Blood Cells";
 		};
-		class wbc {
+		class wbc: None {
 			displayName = "White Blood Cells";
 		};
-		class bloodType {
+		class bloodType: None {
 			displayName = "Blood Type";
 		};
-		class platelet {
+		class platelet: None {
 			displayName = "Platelets";
 		};
-		class flu {
+		class flu: None {
 			displayName = "Influenza";
 		};
-		class cholera {
+		class cholera: None {
 			displayName = "Cholera";
 		};
-		class aids {
+		class aids: None {
 			displayName = "AIDS";
 		};
-		class cold {
+		class cold: None {
 			displayName = "Common Cold";
 		};
-		class ebola {
+		class ebola: None {
 			displayName = "Ebola";
 		};
-		class anthrax {
+		class anthrax: None {
 			displayName = "Anthrax";
 		};
-		class malaria {
+		class malaria: None {
 			displayName = "Malaria";
 		};
-		class covid {
+		class covid: None {
 			displayName = "COVID-19";
 		};
-		class plague {
+		class plague: None {
 			displayName = "Bubonic Plague";
 		};
-		class vaccine_flu {
+		class vaccine_flu: None {
 			displayName = "Influenza Vaccine";
 		};
-		class vaccine_cholera {
+		class vaccine_cholera: None {
 			displayName = "Cholera Vaccine";
 		};
-		class vaccine_aids {
+		class vaccine_aids: None {
 			displayName = "AIDS Vaccine";
 		};
-		class vaccine_cold {
+		class vaccine_cold: None {
 			displayName = "Common Cold Vaccine";
 		};
-		class vaccine_ebola {
+		class vaccine_ebola: None {
 			displayName = "Ebola Vaccine";
 		};
-		class vaccine_anthrax {
+		class vaccine_anthrax: None {
 			displayName = "Anthrax Vaccine";
 		};
-		class vaccine_malaria {
+		class vaccine_malaria: None {
 			displayName = "Malaria Vaccine";
 		};
-		class vaccine_covid {
+		class vaccine_covid: None {
 			displayName = "COVID-19 Vaccine";
 		};
-		class vaccine_plague {
+		class vaccine_plague: None {
 			displayName = "Bubonic Plague Vaccine";
+		};
+	};
+	class CentrifugeMedications: None {
+		class Morphine: None {
+			displayName = "Morphine";
+			doseMultiplier = 5;
+			doseMeasurement = "mg";
+		};
+		class Epinephrine: Morphine {
+			displayName = "Epinephrine";
+			doseMultiplier = 0.3;
 		};
 	};
 };
