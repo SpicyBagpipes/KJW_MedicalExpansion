@@ -86,6 +86,14 @@ class MOD_NAME {
 		};
 	};
 	class CentrifugeMedications: None {
-		
+		class Morphine: None {
+			displayName = "Morphine";
+			doseMultiplier = 5;
+			doseMeasurement = "mg";
+		};
+		class Epinephrine: Morphine {
+			displayName = "Epinephrine";
+			doseMultiplier = 0.3;
+		};
 	};
 };
