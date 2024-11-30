@@ -106,7 +106,7 @@ if (hasInterface) then {
 		private _type = typeOf player;
 		private _group = group player;
 		if (!GVAR(leaveBodyRespawnJoinGroup)) then {
-			[player] joinSilent grpNull;
+			_group = createGroup side _group;
 		};
 		if (GVAR(leaveBodyRespawnComatose)) then {
 			[player, true, 1e10] call ace_medical_fnc_setUnconscious;
