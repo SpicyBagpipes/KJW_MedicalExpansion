@@ -2,7 +2,7 @@
 ---
 ## FAQ:
 #### Q: Should this mod have compatibility with KAM?
-*A:*  **No.** This mod is not designed to run with KAM, and may in the future even block KAM from loading/not load if KAM is loaded. This is so that breaking changes to ACE are not required to be compatible with KAM. However, if you make changes to ACE that KAM may benefit from that do not suit vanilla ACE, please do submit a PR to KAM too.
+*A:*  **Yes.** You are able to create alternative versions of function overwrites if KAM edits the same thing.
 
 #### Q: What if I want to create a new module?
 *A:* Please refer to KJW or one of his minions before doing so. Modules must be properly planned with a wide feature set that is relevant to the module.
