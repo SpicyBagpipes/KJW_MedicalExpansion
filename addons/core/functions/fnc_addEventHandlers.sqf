@@ -117,7 +117,7 @@ if (hasInterface) then {
 		_unit setDamage 1;
 		deleteVehicle _unit;
 		if (GVAR(leaveBodyRespawnNotify)) then {
-			[QGVAR(leaveBodyRespawnNotification),[]] call CBA_fnc_globalEvent;
+			[QGVAR(leaveBodyRespawnNotification),[player]] call CBA_fnc_globalEvent;
 		};
 	}
 ] call CBA_fnc_addEventHandler;
@@ -142,8 +142,10 @@ if (hasInterface) then {
 [
 	QGVAR(leaveBodyRespawnNotification),
 	{
-		params [];
-		systemChat "They have ascended to a higher plane of being...";
+		params [_unit];
+		private _name = _unit getVariable ["ace_name","A lost soul"];
+		private _str = format ["%1 has ascended to a higher plane of being...",_name];
+		systemChat _str;
 	}
 ] call CBA_fnc_addEventHandler;
 
