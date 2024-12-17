@@ -26,6 +26,7 @@ if (_bloodVolume >= DEFAULT_BLOOD_VOLUME) exitWith {};
 
 private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 
+//////// BEGIN EDITS
 // Get blood data from fluid bag.
 private _bloodData = createHashmap;
 if (!(isNil "_selectedFluid")) then {
@@ -36,6 +37,7 @@ if (!(isNil "_selectedFluid")) then {
 		_bloodData = [_classname, createHashmapFromArray [["RBC",24],["WBC",24],["Platelet",24]]];
 	};
 };
+//////// END EDITS
 
 // Get attributes for the used IV
 private _defaultConfig = configFile >> QUOTE(ADDON) >> "IV";
@@ -46,5 +48,5 @@ private _type   = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "typ
 
 // Add IV bag to patient's ivBags array
 private _ivBags = _patient getVariable [QEGVAR(medical,ivBags), []];
-_ivBags pushBack [_volume, _type, _partIndex, _bloodData];
+_ivBags pushBack [_volume, _type, _partIndex, _bloodData]; //EDIT HERE
 _patient setVariable [QEGVAR(medical,ivBags), _ivBags, true];
