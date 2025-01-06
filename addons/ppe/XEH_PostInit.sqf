@@ -43,7 +43,7 @@ Doesn't work for some reason, causes game freezes!
 		
 		if (!local _unit) exitWith {};
 		private _newPPE = _unit call FUNC(processPPE);
-		_unit setVariable [QGVAR(ppe), _newPPE];
+		_unit setVariable [QGVAR(ppe), _newPPE, true];
 	}
 ] call CBA_fnc_addClassEventHandler;
 
@@ -51,7 +51,8 @@ Doesn't work for some reason, causes game freezes!
 	"loadout",
 	{
 		private _newPPE = ace_player call FUNC(processPPE);
-		ace_player setVariable [QGVAR(ppe), _newPPE];
+		ace_player setVariable [QGVAR(ppe), _newPPE, true];
+		if ("arsenal" in toLower (call CBA_fnc_getActiveFeatureCamera)) exitWith {};
 		ace_player call FUNC(hoseInit); // Check if in arsenal or not
 	},
 	true,
