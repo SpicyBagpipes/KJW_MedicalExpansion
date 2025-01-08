@@ -57,5 +57,5 @@ private _rateCoef = GET_NUMBER(_ivConfig >> "rateCoef",getNumber (_defaultConfig
 
 // Add IV bag to patient's ivBags array
 private _ivBags = _patient getVariable [QEGVAR(medical,ivBags), []];
-_ivBags pushBack [_volume, _type, _partIndex, _treatment, _rateCoef, _item, _bloodData];
+_ivBags pushBack [_volume, _type, _partIndex, _treatment, _rateCoef, _item, _bloodData]; // EDIT HERE
 _patient setVariable [QEGVAR(medical,ivBags), _ivBags, true];
