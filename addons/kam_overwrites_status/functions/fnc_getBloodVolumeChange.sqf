@@ -22,7 +22,6 @@ params ["_unit", "_deltaT", "_syncValues"];
 
 private _bloodLoss = [_unit] call ace_medical_status_fnc_getBloodLoss;
 private _internalBleeding = GET_INTERNAL_BLEEDING(_unit);
-private _bloodVolumeChange = -_deltaT * (_bloodLoss + _internalBleeding);
 private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashmap]; // EDIT HERE.
 private _lossVolumeChange = (-_deltaT * ((_bloodLoss + _internalBleeding * (GET_HEART_RATE(_unit) / DEFAULT_HEART_RATE)) / GET_VASOCONSTRICTION(_unit)));
 private _enableFluidShift = EGVAR(vitals,enableFluidShift);
@@ -36,7 +35,6 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
     private _bloodBags = _unit getVariable [QACEGVAR(medical,ivBags), []];
     private _tourniquets = GET_TOURNIQUETS(_unit);
     private _IVarray = _unit getVariable [QGVAR(IV), [0,0,0,0,0,0]];
-    private _flowCalculation = ACEGVAR(medical,ivFlowRate) * (_unit getVariable [QGVAR(alphaAction), 1]) * _deltaT * 4.16;
     private _flowCalculation = (ACEGVAR(medical,ivFlowRate) * _deltaT * 4.16);
     private _hypothermia = EGVAR(hypothermia,hypothermiaActive);
 
@@ -49,7 +47,7 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
     private _fluidHeat = 0;
 
     _bloodBags = _bloodBags apply {
-        _x params ["_bagVolumeRemaining", "_type", "_bodyPart", "_bloodData"]; // EDIT HERE.
+        _x params ["_bagVolumeRemaining", "_type", "_bodyPart", "_treatment", "_rateCoef", "_item", "_bloodData"];
 
         private _bloodDataHash = _bloodData#1; // EDIT HERE.
         private _tourniquets = GET_TOURNIQUETS(_unit);
@@ -95,13 +93,13 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
             // Plasma adds to ECP. Saline splits between the ECP and ISP. Blood adds to ECB
             switch (true) do {
                 case(_type == "Plasma"): { _ECP = _ECP + _bagChange; _lossVolumeChange = _lossVolumeChange + (_bagChange / ML_TO_LITERS); };
-                case(_type == "Saline"): { 
+                case(_type == "Saline"): {
                     if (_enableFluidShift) then {
-                        _ECP = _ECP + _bagChange / 2; 
-                        _ISP = _ISP + _bagChange / 2; 
+                        _ECP = _ECP + _bagChange / 2;
+                        _ISP = _ISP + _bagChange / 2;
                         _lossVolumeChange = _lossVolumeChange + (_bagChange / 2000);
                     } else {
-                        _ECP = _ECP + _bagChange; 
+                        _ECP = _ECP + _bagChange;
                         _lossVolumeChange = _lossVolumeChange + (_bagChange / ML_TO_LITERS);
                     };
                 };
@@ -110,10 +108,9 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
         };
 
         if (_bagVolumeRemaining < 0.01) then {
-            ["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent; // Check if this is a default one or not.
             []
         } else {
-            [_bagVolumeRemaining, _type, _bodyPart, [_bloodData#0, _bloodDataHash]]
+            [_bagVolumeRemaining, _type, _bodyPart, _treatment, _rateCoef, _item, [_bloodData#0, _bloodDataHash]]
         };
     };
 
@@ -178,7 +175,7 @@ if (_enableFluidShift) then {
 
     if (_defaultShift) then {
         _ISP = _ISP + ((((DEFAULT_ISP - _ISP) max -2) min 2) *_deltaT);
-        _SRBC = _SRBC + ((((DEFAULT_SRBC - _SRBC) max -1) min 1) * _deltaT);  
+        _SRBC = _SRBC + ((((DEFAULT_SRBC - _SRBC) max -1) min 1) * _deltaT);
     };
 };
 
