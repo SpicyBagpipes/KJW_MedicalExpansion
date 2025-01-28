@@ -6,7 +6,7 @@
 
 #define FLUID_ID_full(baseClass,displayNameBase) class baseClass##_1 : baseClass \
     { \
-        displayName = QUOTE(displayNameBase 0); \
+        displayName = QUOTE(displayNameBase 1); \
         scope = 1; \
         scopeCurator = 1; \
         scopeArsenal = 1; \
