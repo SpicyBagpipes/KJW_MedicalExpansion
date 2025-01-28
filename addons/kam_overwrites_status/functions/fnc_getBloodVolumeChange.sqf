@@ -66,8 +66,6 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
                     [_unit, 0.025, _bodyPart, "KJW_Bruise"] call ace_medical_fnc_addDamageToUnit; // EDIT HERE.
                 }; // EDIT HERE.
             }; // EDIT HERE.
-            _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
-
             /////////////////////////////////////////// Begin edits.
             _unitData = if (_unitData isEqualTo []) then {createHashmapFromArray _unitData} else {_unitData};
 			{
@@ -79,7 +77,6 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
 				_value = _value + _dataChange;
 				_unitData set [_x, _value];
 			} forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
-        };
 
             if (_hypothermia) then {
                 // If fluid warmers are on the line, fluids are "warmed" and added to the warmer. If there is no fluid warmer on the line, the fluids stayed cooled
@@ -137,7 +134,7 @@ if (!isNil {_unit getVariable [QACEGVAR(medical,ivBags),[]]}) then {
 };
 
 {
-    private _reduction = _bloodVolumeChange*4; //Negative value.
+    private _reduction = _lossVolumeChange*4; //Negative value.
     private _currentVar = _unitData get _x;
     _unitData set [_x, _currentVar+_reduction];
 } forEach KJW_MedicalExpansion_Core_BloodTransmissiveInfo;
