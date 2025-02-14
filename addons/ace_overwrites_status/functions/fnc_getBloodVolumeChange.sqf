@@ -28,8 +28,9 @@ if (!isNil {_unit getVariable QEGVAR(medical,ivBags)}) then {
     private _tourniquets = GET_TOURNIQUETS(_unit);
 
     _bloodBags = _bloodBags apply {
-        private _bloodDataHash = _bloodData#1; // EDIT HERE.
         _x params ["_bagVolumeRemaining", "_type", "_bodyPart", "_treatment", "_rateCoef", "_item", "_bloodData"];
+
+        private _bloodDataHash = _bloodData#1; // EDIT HERE.
 
         if (_tourniquets select _bodyPart == 0) then {
             private _bagChange = (_deltaT * EGVAR(medical,ivFlowRate) * IV_CHANGE_PER_SECOND * _rateCoef) min _bagVolumeRemaining; // absolute value of the change in miliLiters
