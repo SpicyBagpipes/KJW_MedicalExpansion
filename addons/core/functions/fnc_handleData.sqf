@@ -76,3 +76,5 @@ if (_classname == "KJW_MedicalExpansion_bloodSample") then {
 	private _bloodInfo = _data#1;
 	_bloodInfo set ["medications",_medicationsFormatted];
 };
+
+_newKey
