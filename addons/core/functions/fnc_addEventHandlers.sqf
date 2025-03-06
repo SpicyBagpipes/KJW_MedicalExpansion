@@ -212,12 +212,9 @@ player addEventHandler ["Respawn",{
 		private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashmapFromArray GVAR(defaultBloodInfo)];
 
 		{
-			_x params ["_fluidType", "_ivTreatmentClassName", "_bagChangeInLiters"];
-			systemChat str _x;
+			_x params ["_fluidType", "_ivTreatmentClassName", "_bagChangeInLiters", "_item"];
 
-			if (true) then {continue};
-
-			private _relevantData = GVAR(fluidData) getOrDefault ["something",["",createHashmapFromArray GVAR(defaultBloodInfo)]];
+			private _relevantData = GVAR(fluidData) getOrDefault [_item,["",createHashmapFromArray GVAR(defaultBloodInfo)]];
 			private _bloodDataHash = _relevantData#1;
 
 			private _bloodType = _bloodDataHash get "bloodType";
@@ -242,9 +239,11 @@ player addEventHandler ["Respawn",{
 				_unitData set [_x, _value];
 			} forEach GVAR(bloodTransmissiveInfo);
 
+			/* No longer functional
 			if (_bagVolumeRemaining < 0.01) then {
 				["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent;
 			};
+			*/
 
 		} forEach _consumedIVs;
 	}
