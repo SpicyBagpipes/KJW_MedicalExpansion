@@ -231,7 +231,7 @@ player addEventHandler ["Respawn",{
 
 			{
 				private _data = _bloodDataHash getOrDefault [_x, 0, true];
-				private _dataChange = _bagChangeInLiters min _data;
+				private _dataChange = (_bagChangeInLiters min _data)/10;
 				private _dataRemaining = _data - _dataChange;
 				_bloodDataHash set [_x, _dataRemaining];
 				private _value = _unitData getOrDefault [_x, 0, true];
