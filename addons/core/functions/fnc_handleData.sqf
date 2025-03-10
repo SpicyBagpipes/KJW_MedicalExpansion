@@ -26,6 +26,7 @@ params ["_data", "_addition", "_unit"];
 
 private _fluidData = GVAR(fluidData);
 private _classname = _data#0;
+private _newKey = "";
 
 if (count _fluidData isEqualTo 0 && _addition == "add") exitWith {
 	//Does not exist, create.
