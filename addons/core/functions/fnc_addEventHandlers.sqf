@@ -201,3 +201,50 @@ player addEventHandler ["Respawn",{
 		};
 	}
 ] call CBA_fnc_addEventHandler;
+
+[
+	"ace_medical_consumedIVs",
+	{
+		params ["_unit", "_consumedIVs"];
+
+		if (_consumedIVs isEqualTo [] || !local _unit) exitWith {};
+		
+		private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashmapFromArray GVAR(defaultBloodInfo)];
+
+		{
+			_x params ["_fluidType", "_ivTreatmentClassName", "_bagChangeInLiters", "_item"];
+
+			private _relevantData = GVAR(fluidData) getOrDefault [_item,["",createHashmapFromArray GVAR(defaultBloodInfo)]];
+			private _bloodDataHash = _relevantData#1;
+
+			private _bloodType = _bloodDataHash get "bloodType";
+            private _isCompatible = [_unit getVariable QGVAR(bloodType),_bloodType] call FUNC(checkBloodTypeCompatibility);
+
+			if (!_isCompatible && GVAR(bloodIncompatibilityEnabled)) then {
+                _bagChangeInLiters = _bagChangeInLiters * -1; // This will now do nothing and needs to be moved to its own function
+                private _roll = random 1;
+                if (_roll < 0.2) then {
+                    private _bodyPart = selectRandom ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];
+                    [_unit, 0.025, _bodyPart, "KJW_Bruise"] call ace_medical_fnc_addDamageToUnit;
+                };
+            };
+
+			{
+				private _data = _bloodDataHash getOrDefault [_x, 0, true];
+				private _dataChange = (_bagChangeInLiters min _data)/10;
+				private _dataRemaining = _data - _dataChange;
+				_bloodDataHash set [_x, _dataRemaining];
+				private _value = _unitData getOrDefault [_x, 0, true];
+				_value = _value + _dataChange;
+				_unitData set [_x, _value];
+			} forEach GVAR(bloodTransmissiveInfo);
+
+			/* No longer functional
+			if (_bagVolumeRemaining < 0.01) then {
+				["KJW_MedicalExpansion_Core_dataRemove", [_bloodData]] call CBA_fnc_globalEvent;
+			};
+			*/
+
+		} forEach _consumedIVs;
+	}
+] call CBA_fnc_addEventHandler;
