@@ -1,10 +1,10 @@
 # KJW's Medical Expansion
 
-KJW's Medical Expansion is a set of mods which aim to expand the existing ACE medical system in order to add a variety of engaging, interesting and realistic features. A higher level of fidelity will be achieved when the mod is ran with [KAT - Advanced Medical](https://steamcommunity.com/sharedfiles/filedetails/?id=2020940806), and will expand on features that they add. The current module set is found below, with this repository being used for Core.
+KJW's Medical Expansion is a set of mods which aim to expand the existing ACE medical system in order to add a variety of engaging, interesting and realistic features. The current module set is found below
 * KJW's Medical Expansion: Core
-* KJW's Medical Expansion: Radiate
-* KJW's Medical Expansion: Diseases
-* KJW's Medical Expansion: Toxins
+* KJW's Medical Expansion: Radiate (COMPLETE)
+* KJW's Medical Expansion: Diseases (WIP)
+* KJW's Medical Expansion: Toxins (WIP)
 
 [Documentation](https://kjws-arma-enhancements.gitbook.io/kjws-medical-expansion/)
 
