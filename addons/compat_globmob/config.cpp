@@ -12,7 +12,7 @@ class CfgPatches {
             "gm_characters_ge_characters",
             "gm_characters_gc_characters"
         };
-        requiredVersion=1;
+        requiredVersion = 2.20;
 		units[] = {};
 		weapons[] = {};
 		vehicles[] = {};

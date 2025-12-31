@@ -11,7 +11,7 @@ class CfgPatches {
             "A3_Data_F_AoW_Loadorder",
             "US_M40_Masck_NBC"
         };
-        requiredVersion=1;
+        requiredVersion = 2.20;
 		units[] = {};
 		weapons[] = {};
 		vehicles[] = {};

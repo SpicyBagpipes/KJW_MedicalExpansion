@@ -13,7 +13,7 @@ class CfgPatches {
             "ace_interaction",
             "KJW_MedicalExpansion_Core"
         };
-        requiredVersion=1;
+        requiredVersion = 2.20;
 		units[] = {};
 		weapons[] = {};
 		vehicles[] = {};

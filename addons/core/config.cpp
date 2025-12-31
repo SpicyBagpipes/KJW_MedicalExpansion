@@ -12,7 +12,7 @@ class CfgPatches {
             "ace_medical_treatment",
             "ace_interaction"
         };
-        requiredVersion=1;
+        requiredVersion = 2.20;
 		units[] = {"KJW_Centrifuge_F"};
 		weapons[] = {};
 		vehicles[] = {};
