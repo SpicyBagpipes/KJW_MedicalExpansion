@@ -130,7 +130,7 @@ if (hasInterface) then {
 		params ["_unit"];
 		if (!local _unit) exitWith {};
 		private _bloodType = [_unit] call FUNC(getBloodType);
-		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
+		private _bloodInfo = createHashMapFromArray GVAR(defaultBloodInfo);
 		_bloodInfo set ["bloodType", _bloodType];
 		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 	},
@@ -164,7 +164,7 @@ if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 	{
 		params ["_unit"];
 		private _bloodType = [_unit] call FUNC(getBloodType);
-		private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
+		private _bloodInfo = createHashMapFromArray GVAR(defaultBloodInfo);
 		_bloodInfo set ["bloodType", _bloodType];
 		_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 	}
@@ -173,7 +173,7 @@ if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
 player addEventHandler ["Respawn",{
 	params ["_unit"];
 	private _bloodType = [_unit] call FUNC(getBloodType);
-	private _bloodInfo = createHashmapFromArray GVAR(defaultBloodInfo);
+	private _bloodInfo = createHashMapFromArray GVAR(defaultBloodInfo);
 	_bloodInfo set ["bloodType", _bloodType];
 	_unit setVariable [QGVAR(bloodInfo), _bloodInfo, true];
 }];
@@ -209,12 +209,12 @@ player addEventHandler ["Respawn",{
 
 		if (_consumedIVs isEqualTo [] || !local _unit) exitWith {};
 		
-		private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashmapFromArray GVAR(defaultBloodInfo)];
+		private _unitData = _unit getVariable ["KJW_MedicalExpansion_Core_BloodInfo", createHashMapFromArray GVAR(defaultBloodInfo)];
 
 		{
 			_x params ["_fluidType", "_ivTreatmentClassName", "_bagChangeInLiters", "_item"];
 
-			private _relevantData = GVAR(fluidData) getOrDefault [_item,["",createHashmapFromArray GVAR(defaultBloodInfo)]];
+			private _relevantData = GVAR(fluidData) getOrDefault [_item,["",createHashMapFromArray GVAR(defaultBloodInfo)]];
 			private _bloodDataHash = _relevantData#1;
 
 			private _bloodType = _bloodDataHash get "bloodType";

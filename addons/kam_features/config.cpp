@@ -11,7 +11,7 @@ class CfgPatches {
             "A3_Data_F_AoW_Loadorder",
             "kat_pharma"
         };
-        requiredVersion = 1;
+        requiredVersion = 2.20;
 		units[] = {};
 		weapons[] = {};
 		vehicles[] = {};
