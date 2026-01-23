@@ -4,7 +4,7 @@ class ace_medical_treatment {
             effectiveness = 0;
             reopeningChance = 0;
             class GVAR(penetratingChest) {
-                effectiveness = 10;
+                effectiveness = 1;
                 reopeningChance = 0;
                 reopeningMaxDelay = 0;
                 reopeningMinDelay = 0;

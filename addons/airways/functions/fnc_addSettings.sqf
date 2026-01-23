@@ -37,3 +37,14 @@
 	{}, // Setting changed code
 	false // Requires restart
 ] call CBA_fnc_addSetting;
+
+[
+	QGVAR(ptxDegradeTime),
+	"SLIDER",
+	["Pneumothorax Time", "Base time for a pneumothorax to develop from an unstitched chest wound"],
+	["KJW's Medical Expansion", "Airways"],
+	[60, 600, 300, 0], // Default value
+	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
+	{}, // Setting changed code
+	false // Requires restart
+] call CBA_fnc_addSetting;

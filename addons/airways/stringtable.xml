@@ -13,5 +13,53 @@
         <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_penetratingChest_Minor">
             <English>Penetrating Chest Wound</English>
         </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_pneumothorax">
+            <English>Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_pneumothorax_Large">
+            <English>Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_pneumothorax_Medium">
+            <English>Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_pneumothorax_Minor">
+            <English>Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_pneumothorax">
+            <English>Tension Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_pneumothorax_Large">
+            <English>Tension Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_pneumothorax_Medium">
+            <English>Tension Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_pneumothorax_Minor">
+            <English>Tension Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_hemopneumothorax">
+            <English>Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_hemopneumothorax_Large">
+            <English>Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_hemopneumothorax_Medium">
+            <English>Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_hemopneumothorax_Minor">
+            <English>Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_hemopneumothorax">
+            <English>Tension Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_hemopneumothorax_Large">
+            <English>Tension Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_hemopneumothorax_Medium">
+            <English>Tension Hemopneumothorax</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_tension_hemopneumothorax_Minor">
+            <English>Tension Hemopneumothorax</English>
+        </Key>
     </Package>
 </Project>
