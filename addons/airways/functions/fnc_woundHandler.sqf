@@ -19,7 +19,7 @@
 params ["_unit", "_allDamages", "_typeOfDamage"];
 
 private _debounced = _unit getVariable [QGVAR(debounce),0];
-if (_debounced isEqualTo diag_frameNo) exitWith { _this};
+if (_debounced isEqualTo diag_frameNo) exitWith {_this};
 
 if (random 100 > GVAR(lungSizeCoef)*100) exitWith {_this}; // Didn't hit the lungs
 

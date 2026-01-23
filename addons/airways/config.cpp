@@ -34,3 +34,6 @@ class Extended_PreInit_EventHandlers {
 };
 
 #include "ace_medical_injuries.hpp"
+#include "ace_medical_treatment.hpp"
+#include "ace_medical_treatment_actions.hpp"
+#include "CfgWeapons.hpp"

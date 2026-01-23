@@ -19,3 +19,4 @@
 PREP(addSettings);
 PREP(woundHandler);
 PREP(unitProcess);
+PREP(canApplyChestSeal);

@@ -12,7 +12,7 @@ class ACE_Medical_Injuries {
     };
     class wounds {
         class GVAR(penetratingChest) {
-            bleeding = 0;
+            bleeding = 0.05;
             pain = 1;
         };
     };
