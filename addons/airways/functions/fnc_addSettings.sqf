@@ -2,11 +2,10 @@
 /*
  *  Author: KJW
  * 
- *  Function description
+ *  Adds CBA settings required for module to function
  * 
  *  Arguments:
- *  0: Objects <ARRAY>
- *  1: All <BOOL>
+ *  None
  * 
  *  Return Value:
  *  None
@@ -20,9 +19,9 @@
 [
 	QGVAR(lungSizeCoef),
 	"SLIDER",
-	["Lung Size", "Percentage chance for lung injury on a torso hit"],
+	["Lung Size", "Chance for lung injury on a torso hit"],
 	["KJW's Medical Expansion", "Airways"],
-	[0, 30, 20, 0, 1], // Default value
+	[0, 0.8, 0.4, 0, true], // Default value
 	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
 	{}, // Setting changed code
 	false // Requires restart
@@ -33,7 +32,7 @@
 	"SLIDER",
 	["Overpenetration Threshold", "How much damage must be intercepted by armour for it to count as overpenetration?"],
 	["KJW's Medical Expansion", "Airways"],
-	[0, 20, 10, 0, 1], // Default value
+	[0, 0.2, 0.1, 0, true], // Default value
 	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
 	{}, // Setting changed code
 	false // Requires restart

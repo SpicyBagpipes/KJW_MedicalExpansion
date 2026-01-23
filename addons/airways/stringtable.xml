@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACE">
+    <Package name="Medical_Damage">
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_penetratingChest">
+            <English>Penetrating Chest Wound</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_penetratingChest_Large">
+            <English>Deep Penetrating Chest Wound</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_penetratingChest_Medium">
+            <English>Penetrating Chest Wound</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_KJW_MedicalExpansion_Airways_penetratingChest_Minor">
+            <English>Penetrating Chest Wound</English>
+        </Key>        
+    </Package>
+</Project>

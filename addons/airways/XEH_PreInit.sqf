@@ -11,7 +11,7 @@
  *  None
  * 
  *  Example:
- *  call KJW_MedicalExpansion_Core_XEH_PreInit
+ *  call KJW_MedicalExpansion_Airways_XEH_PreInit
  * 
  *  Public: No
  */

@@ -11,17 +11,13 @@
  *  None
  * 
  *  Example:
- *  call KJW_MedicalExpansion_Core_XEH_PostInit
+ *  call KJW_MedicalExpansion_Airways_XEH_PostInit
  * 
  *  Public: No
  */
 
 call FUNC(addSettings);
 
-[
-	"ace_medical_handleUnitVitals",
-	{
-		params ["_unit", "_deltaT"];
-        [_unit, _deltaT] call FUNC(unitProcess);
-	}
-] call CBA_fnc_addEventHandler;
+GVAR(lungInjuries) = [QGVAR(penetratingChest)];
+
+[QGVAR(SpO2factor),FUNC(unitProcess)] call ace_medical_vitals_fnc_addSpO2DutyFactor;
