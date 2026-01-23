@@ -22,7 +22,7 @@ params ["_target", "_player"];
 
 private _items = items _player select {_x isKindOf ["KJW_MedicalExpansion_bloodSample", configFile >> "CfgWeapons"]};
 private _spinInProgress = _target getVariable [QGVAR(spinInProgress),false];
-private _maximumLoading = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> QGVAR(centrifugeMaxLoad));
+private _maximumLoading = getNumber (configOf _target >> QGVAR(centrifugeMaxLoad));
 private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 private _centrifugeUnderCapacity = _maximumLoading < count _currentLoaded;
 

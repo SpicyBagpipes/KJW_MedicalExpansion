@@ -23,7 +23,7 @@ _target setVariable [QGVAR(spinInProgress), true, true];
 _target setVariable [QGVAR(spinComplete), false, true];
 _target setVariable [QGVAR(spinStartedTime), _time, true];
 
-private _configDuration = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> QGVAR(centrifugeDuration));
+private _configDuration = getNumber (configOf _target >> QGVAR(centrifugeDuration));
 private _duration = GVAR(centrifugeCoef)*_configDuration;
 
 _target animateSource ["lid_source", 0];
