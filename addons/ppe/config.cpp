@@ -10,7 +10,7 @@ class CfgPatches {
             "A3_Characters_F",
             "A3_Data_F_AoW_Loadorder"
         };
-        requiredVersion = 1;
+        requiredVersion = 2.20;
 		units[] = {};
 		weapons[] = {};
 		vehicles[] = {};
