@@ -24,6 +24,6 @@ class ace_medical_treatment_actions {
         displayName = "Chest Drain";
         displayNameProgress = "Applying Chest Drain...";
         items[] = {"KJW_MedicalExpansion_ChestDrain"};
-        treatmentTime = 5;
+        treatmentTime = 15;
     };
 };
