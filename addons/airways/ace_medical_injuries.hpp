@@ -3,13 +3,13 @@ class ACE_Medical_Injuries {
         class GVAR(airwayDamage) {
             selectionSpecific = 1;
             class GVAR(penetratingChest) {
-                weighting[] = {{1.5, 1}, {0.35, 1}, {0.35, 0}};
+                weighting[] = {{0.05, 0}, {0.05, 1}};
             };
         };
         class GVAR(pneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(pneumothorax) {
-                weighting[] = {{1.5,1},{1.5,0}};
+                weighting[] = {{0.5,1},{0.5,0}};
             };
         };
         class GVAR(tension_pneumothoraxDmg) {
@@ -21,7 +21,7 @@ class ACE_Medical_Injuries {
         class GVAR(hemopneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(hemopneumothorax) {
-                weighting[] = {{1.5,1},{1.5,0}};
+                weighting[] = {{0.5,1},{0.5,0}};
             };
         };
         class GVAR(tension_hemopneumothoraxDmg) {

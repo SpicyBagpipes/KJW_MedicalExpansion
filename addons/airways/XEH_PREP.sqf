@@ -19,4 +19,9 @@
 PREP(addSettings);
 PREP(woundHandler);
 PREP(unitProcess);
+PREP(ptxDegrade);
 PREP(canApplyChestSeal);
+PREP(canNCD);
+PREP(canChestDrain);
+PREP(chestDrain);
+PREP(treatPtx);
