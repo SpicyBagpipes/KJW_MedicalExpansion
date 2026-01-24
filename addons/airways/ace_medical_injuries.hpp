@@ -9,25 +9,25 @@ class ACE_Medical_Injuries {
         class GVAR(pneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(pneumothorax) {
-                weighting[] = {{1.5,0},{1.5,1},{1.5,0}};
+                weighting[] = {{1.5,1},{1.5,0}};
             };
         };
         class GVAR(tension_pneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(tension_pneumothorax) {
-                weighting[] = {{1.5,0},{1.5,1},{1.5,0}};
+                weighting[] = {{1.5,1},{1.5,0}};
             };
         };
         class GVAR(hemopneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(hemopneumothorax) {
-                weighting[] = {{1.5,0},{1.5,1},{1.5,0}};
+                weighting[] = {{1.5,1},{1.5,0}};
             };
         };
         class GVAR(tension_hemopneumothoraxDmg) {
             selectionSpecific = 1;
             class GVAR(tension_hemopneumothorax) {
-                weighting[] = {{1.5,0},{1.5,1},{1.5,0}};
+                weighting[] = {{1.5,1},{1.5,0}};
             };
         };
         class woundHandlers {
