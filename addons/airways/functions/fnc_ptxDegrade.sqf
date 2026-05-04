@@ -17,7 +17,7 @@
  *  Public: No
  */
 
-params ["_unit","_oldOpenWounds"];
+params ["_unit", "_oldOpenWounds", "_hemo"];
 
 //if (!alive _unit) exitWith {}; // Should cover unit being deleted/cleaned up
 
@@ -73,8 +73,17 @@ if ((_openChestWounds#1 + _bandagedChestWounds#1) isEqualTo 0) exitWith {}; // N
 
 if (/*(_openChestWounds#1 + _bandagedChestWounds#1) <= _oldChestWounds#1*/false) then { // There is either fewer chest wounds or same number
     // Give a single pneumothorax
-    [_unit, 0.6, "body", QGVAR(pneumothoraxDmg)] call ace_medical_fnc_addDamageToUnit;
+    if !(_hemo) then {
+        [_unit, _unit, "body", "KJW_MedicalExpansion_NCD"] call FUNC(treatPtx);
+        [_unit, "body", [QGVAR(tension_pneumothorax), 1, 1, 1.2]] call ace_medical_fnc_addWound;
+    };
 } else { // There is more chest wounds
-    // Give a single hemopneumothorax
-    [_unit, 0.6, "body", QGVAR(hemopneumothoraxDmg)] call ace_medical_fnc_addDamageToUnit;
+    // Give a single tension hemopneumothorax
+    if (_hemo) then {
+        [_unit, _unit, "body", "KJW_MedicalExpansion_ChestDrain"] call FUNC(treatPtx);
+        [_unit, "body", [QGVAR(tension_hemopneumothorax), 1, 1, 1.5]] call ace_medical_fnc_addWound;
+    } else {
+        [_unit, _unit, "body", "KJW_MedicalExpansion_NCD"] call FUNC(treatPtx);
+        [_unit, "body", [QGVAR(tension_pneumothorax), 1, 2, 1.2]] call ace_medical_fnc_addWound;
+    };
 };

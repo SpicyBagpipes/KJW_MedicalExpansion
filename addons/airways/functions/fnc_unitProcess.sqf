@@ -24,9 +24,10 @@ private _headInjuries = [_unit, "head"] call ace_medical_fnc_getOpenWounds;
 {
     _x params ["_id","_openness","_bleedingCoef","_dmg"];
     private _classname = ace_medical_damage_woundClassNames select _id/10;
-    if (_classname in GVAR(airwayInjuries)) then {
+    private _dmgCoef = GVAR(injuryInfo) get _classname;
+    if !(isNil "_dmgCoef") then {
         // Uh oh, he's got a head injury!
-        _breathingEffectiveness = _breathingEffectiveness - _dmg;
+        _breathingEffectiveness = _breathingEffectiveness - (_dmg * _dmgCoef);
     };
 } forEach _headInjuries;
 
@@ -35,9 +36,10 @@ private _chestInjuries = [_unit, "body"] call ace_medical_fnc_getOpenWounds;
 {
     _x params ["_id","_openness","_bleedingCoef","_dmg"];
     private _classname = ace_medical_damage_woundClassNames select _id/10;
-    if (_classname in GVAR(lungInjuries)) then {
+    private _dmgCoef = GVAR(injuryInfo) get _classname;
+    if !(isNil "_dmgCoef") then {
         // Uh oh, he's got a lung injury!
-        _breathingEffectiveness = _breathingEffectiveness - _dmg;
+        _breathingEffectiveness = _breathingEffectiveness - (_dmg * _dmgCoef);
     };
 } forEach _chestInjuries;
 

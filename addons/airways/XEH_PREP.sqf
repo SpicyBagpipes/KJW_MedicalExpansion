@@ -25,3 +25,4 @@ PREP(canNCD);
 PREP(canChestDrain);
 PREP(chestDrain);
 PREP(treatPtx);
+PREP(updateVitals);

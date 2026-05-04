@@ -45,10 +45,10 @@ GVAR(fluids) = ["KJW_MedicalExpansion_bloodBag_250","KJW_MedicalExpansion_bloodB
 
 		//Add select context menu action
 		[_x, "CONTAINER", "Select", [1,1,1,1], "a3\3den\data\cfgwaypoints\hold_ca.paa", {true}, {
-            params ["_unit", "_container", "_item", "_slot", "_params"];
+			params ["_unit", "_container", "_item", "_slot", "_params"];
 			_unit setVariable [QGVAR(selectedFluid), _item, true];
-            false
-        }, false, [0,1,2]] call CBA_fnc_addItemContextMenuOption;
+			false
+		}, false, [0,1,2]] call CBA_fnc_addItemContextMenuOption;
 
 	} forEach GVAR(fluids);
 },[],0.25] call CBA_fnc_waitAndExecute; //Give other addons time to pushback into GVAR(fluids)

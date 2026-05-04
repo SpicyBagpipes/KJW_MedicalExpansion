@@ -19,7 +19,7 @@
  *  Public: No
  */
 
-params ["_patient", "_bodyPart", "_classname", "_bandageEffectiveness"];
+params ["_medic", "_patient", "_bodyPart", "_classname"];
 
 private _openWounds = _patient getVariable ["ace_medical_openWounds",createHashMap];
 private _woundsOnPart = _openWounds get _bodyPart;
