@@ -19,7 +19,7 @@
 
 params ["_unit", "_oldOpenWounds", "_hemo"];
 
-//if (!alive _unit) exitWith {}; // Should cover unit being deleted/cleaned up
+if (isNull _unit) exitWith {}; // Should cover unit being deleted/cleaned up
 
 private _currentOpenWounds = (_unit getVariable ["ace_medical_openWounds",createHashMap]) get "body";
 private _currentBandagedWounds = (_unit getVariable ["ace_medical_bandagedWounds",createHashMap]) get "body";
