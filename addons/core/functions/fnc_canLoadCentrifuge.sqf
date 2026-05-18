@@ -26,4 +26,4 @@ private _maximumLoading = getNumber (configOf _target >> QGVAR(centrifugeMaxLoad
 private _currentLoaded = _target getVariable [QGVAR(currentLoaded), []];
 private _centrifugeUnderCapacity = _maximumLoading < count _currentLoaded;
 
-(count _items > 0) && !_spinInProgress && !_centrifugeUnderCapacity;
+(_items isNotEqualTo []) && !_spinInProgress && !_centrifugeUnderCapacity;

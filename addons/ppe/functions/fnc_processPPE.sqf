@@ -61,7 +61,7 @@ private _outputArr = [];
 		continue;
 	};
 	
-	if (count (_requirements arrayIntersect _allItems) > 0) then {
+	if ((_requirements arrayIntersect _allItems) isNotEqualTo []) then {
 		_outputArr pushBack _rating*EGVAR(core,ppeCoef);
 		continue;
 	};
