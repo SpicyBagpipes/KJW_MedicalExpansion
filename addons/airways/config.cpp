@@ -14,7 +14,7 @@ class CfgPatches {
         };
         requiredVersion = 2.20;
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"KJW_MedicalExpansion_ChestSeal", "KJW_MedicalExpansion_NCD", "KJW_MedicalExpansion_ChestDrain"};
 		vehicles[] = {};
 	};
 };
