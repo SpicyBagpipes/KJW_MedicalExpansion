@@ -60,7 +60,7 @@ if (random 100 > GVAR(lungSizeCoef)*100) exitWith {_this}; // Didn't hit the lun
     };
 
     // Start a waitAndExecute for ptx fx
-    [FUNC(ptxDegrade), [_unit, _unit getVariable "ace_medical_openWounds", _overpenned], 5/*GVAR(ptxDegradeTime) + (random 50 - 25)*/] call CBA_fnc_waitAndExecute;
+    [FUNC(ptxDegrade), [_unit, _unit getVariable "ace_medical_openWounds", _overpenned], GVAR(ptxDegradeTime) + (random 50 - 25)] call CBA_fnc_waitAndExecute;
 
     break; // No point processing any more injuries
 } forEach _allDamages;
