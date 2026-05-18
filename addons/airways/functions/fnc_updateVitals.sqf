@@ -41,11 +41,12 @@ private _hasPtx = false;
     };
 } forEach _currentOpenWounds;
 
-if ((!isNil "_openChestWounds") && _hasPtx) then {
+if ((isNil "_openChestWounds") && _hasPtx) then {
     // Heal hims chest
     if (random 1 < 0.5) then {
-        systemChat "yeah i'd heal";
+        //systemChat "yeah i'd heal";
         // Heal PTX
         // TODO: this
+        [_unit, "Body", "KJW_MedicalExpansion_ChestSeal"] call ace_medical_treatment_fnc_bandageLocal
     };
 };

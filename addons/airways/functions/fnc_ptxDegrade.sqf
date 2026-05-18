@@ -52,7 +52,7 @@ private _oldChestWounds = nil;
     _x params ["_id","_openness","_bleedingCoef","_dmg"];
     private _classname = ace_medical_damage_woundClassNames select _id/10;
     if (_classname in GVAR(lungInjuries)) then {
-        // Uh oh, he's got an bandaged lung injury!
+        // Uh oh, he's got a stitched lung injury!
         _stitchedChestWounds = _x;
     };
 } forEach _currentStitchedWounds;
@@ -71,7 +71,7 @@ if isNil "_openChestWounds" then {_openChestWounds = [nil,0]};
 
 if ((_openChestWounds#1 + _bandagedChestWounds#1) isEqualTo 0) exitWith {}; // No more untreated chest wounds
 
-if (/*(_openChestWounds#1 + _bandagedChestWounds#1) <= _oldChestWounds#1*/false) then { // There is either fewer chest wounds or same number
+if ((_openChestWounds#1 + _bandagedChestWounds#1) <= _oldChestWounds#1) then { // There is either fewer chest wounds or same number
     // Give a single pneumothorax
     if !(_hemo) then {
         [_unit, _unit, "body", "KJW_MedicalExpansion_NCD"] call FUNC(treatPtx);

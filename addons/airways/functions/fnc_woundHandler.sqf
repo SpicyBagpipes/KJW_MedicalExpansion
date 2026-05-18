@@ -51,7 +51,7 @@ if (random 100 > GVAR(lungSizeCoef)*100) exitWith {_this}; // Didn't hit the lun
         If pneumothorax gets the degrade time and is untreated, degrade into TENSION pneumothorax
     */
 
-    if /*!_overpenned*/true then {
+    if !_overpenned then {
         // Give a single pneumothorax
         [_unit, "body", [QGVAR(pneumothorax), 1, 1, 0.6]] call ace_medical_fnc_addWound;
     } else { // There is more chest wounds
