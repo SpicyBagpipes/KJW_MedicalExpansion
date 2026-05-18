@@ -5,7 +5,6 @@ class CfgGlasses {
     class G_RegulatorMask_base_F;
 	class G_Balaclava_blk;
 
-	#undef BASECLASS
 	#define BASECLASS G_AirPurifyingRespirator_01_base_F
 
 	class G_AirPurifyingRespirator_01_F: BASECLASS {

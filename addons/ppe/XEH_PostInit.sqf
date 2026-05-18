@@ -16,8 +16,8 @@
  *  Public: No
  */
 
-GVAR(PPE) = createHashmap;
-GVAR(PPERequirements) = createHashmap;
+GVAR(PPE) = createHashMap;
+GVAR(PPERequirements) = createHashMap;
 
 /*
 [

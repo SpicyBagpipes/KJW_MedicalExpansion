@@ -44,20 +44,20 @@ private _info = GVAR(fluidData) get _bloodKey;
         {
             _x params ["_medicationName", "_dose"];
 
-            private _showInCentrifuge = GET_NUMBER(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "showInCentrifuge", 0);
+            private _showInCentrifuge = GET_NUMBER(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "showInCentrifuge",0);
             if (_showInCentrifuge != 1) then {continue};
 
             _lb lbAdd "";
-            private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "displayName", _medicationName);
-            private _doseMultiplier = GET_NUMBER(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "doseMultiplier", 1);
-            private _doseMeasurement = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "doseMeasurement", "mg");
+            private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "displayName",_medicationName);
+            private _doseMultiplier = GET_NUMBER(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "doseMultiplier",1);
+            private _doseMeasurement = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "centrifugeMedications" >> _medicationName >> "doseMeasurement","mg");
             _lb lbSetText [lbSize _lb - 1, _str];
             _lb lbSetTextRight [lbSize _lb - 1, (str (_dose*_doseMultiplier)) + " " + _doseMeasurement + " "];
         } forEach _y;
         continue;
     }; // Medications have specific handling
 	_lb lbAdd "";
-    private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "bloodProperties" >> _x >> "displayName", _x);
+    private _str = GET_TEXT(configFile >> "KJW_MedicalExpansion" >> "bloodProperties" >> _x >> "displayName",_x);
 	_lb lbSetText [lbSize _lb - 1, _str];
     _lb lbSetTextRight [lbSize _lb - 1, "0% "];
     if (_x == "bloodType") then {

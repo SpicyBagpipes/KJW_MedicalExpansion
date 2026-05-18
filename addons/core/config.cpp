@@ -14,7 +14,7 @@ class CfgPatches {
         };
         requiredVersion = 2.20;
 		units[] = {"KJW_Centrifuge_F"};
-		weapons[] = {};
+		weapons[] = {"KJW_MedicalExpansion_500_TransfusionKit", "KJW_MedicalExpansion_250_TransfusionKit", "KJW_MedicalExpansion_SampleKit"};
 		vehicles[] = {};
 	};
 };
