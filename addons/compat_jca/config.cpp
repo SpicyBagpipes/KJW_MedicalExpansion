@@ -8,7 +8,9 @@ class CfgPatches {
             "A3_Data_F",
             "A3_Weapons_F",
             "A3_Characters_F",
-            "A3_Data_F_AoW_Loadorder"
+            "A3_Data_F_AoW_Loadorder",
+            "Uniforms_F_JCA_IE",
+            "Facewear_F_JCA_IE"
         };
         requiredVersion = 2.20;
 		units[] = {};
@@ -19,3 +21,4 @@ class CfgPatches {
 };
 
 #include "CfgGlasses.hpp"
+#include "CfgWeapons.hpp"
