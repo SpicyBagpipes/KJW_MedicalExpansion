@@ -25,6 +25,6 @@
 
 params ["_medic", "_patient", "_bodyPart", "_classname", "", "", "", "_bandageEffectiveness"];
 
-[_patient, "activity", "%1 applied chest drain to patient", [[_medic, false, true] call EFUNC(common,getName)]] call ace_medical_treatment_fnc_addToLog;
+[_patient, "activity", "%1 applied chest drain to patient", [[_medic, false, true] call ace_common_fnc_getName]] call ace_medical_treatment_fnc_addToLog;
 
 [QGVAR(treatPtxLocal), [_patient, _bodyPart, _classname, _bandageEffectiveness], _patient] call CBA_fnc_targetEvent;
