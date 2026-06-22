@@ -16,6 +16,7 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "Field Transfusion Kit (500ml)";
 		descriptionShort = "Used for taking blood donations";
+		picture = QPATHTOF(data\transfusionkit_icon_ca.paa);
 		class ItemInfo: CBA_MiscItem_ItemInfo {
 			mass = 0.25;
 		};
@@ -23,6 +24,7 @@ class CfgWeapons {
 	class KJW_MedicalExpansion_250_TransfusionKit: KJW_MedicalExpansion_500_TransfusionKit {
 		scope = 2;
 		displayName = "Field Transfusion Kit (250ml)";
+		picture = QPATHTOF(data\transfusionkit_icon_ca.paa);
 	};
 	class KJW_MedicalExpansion_SampleKit: KJW_MedicalExpansion_500_TransfusionKit {
 		scope = 2;
