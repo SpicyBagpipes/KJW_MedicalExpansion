@@ -11,7 +11,7 @@ class RscTitles {
 		duration = 5;
 		movingEnable = 0;
 		class controls {
-			class background: RscPicture {
+			class Background: RscPicture {
 				idc = 2120;
 				text = "\y\kjw_medicalexpansion\addons\core\data\bloodsticker_bag.paa";
 				x = QUOTE(30.5 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X);

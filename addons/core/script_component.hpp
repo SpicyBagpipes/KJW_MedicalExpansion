@@ -2,6 +2,11 @@
 #include "\y\KJW_MedicalExpansion\addons\core\major_includes.hpp"
 #define COMPONENT_BEAUTIFIED MOD_NAME_BEAUTIFIED Core
 
+#define IDC_BODY_ARMLEFT_IV 7075
+#define IDC_BODY_ARMRIGHT_IV 7080
+#define IDC_BODY_LEGLEFT_IV 7085
+#define IDC_BODY_LEGRIGHT_IV 7090
+
 //Significantly helped by TFAR's radio_ids.hpp
 
 #define FLUID_ID_full(baseClass,displayNameBase) class baseClass##_1 : baseClass \
