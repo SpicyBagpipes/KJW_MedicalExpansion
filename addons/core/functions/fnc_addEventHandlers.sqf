@@ -195,12 +195,15 @@ player addEventHandler ["Respawn",{
 	"ace_medical_gui_updateBodyImage",
 	{
 		params ["_ctrlGroup", "_target", "_selectionN"];
-		private _IVs = _target getVariable ["KJW_MedicalExpansion_Core_IV",[0,0,0,0,0,0]];
-		private _cannula = _IVs#_selectionN;
-		private _idc = [nil,nil,IDC_BODY_ARMLEFT_IV,IDC_BODY_ARMRIGHT_IV,IDC_BODY_LEGLEFT_IV,IDC_BODY_LEGRIGHT_IV] select _selectionN;
-		if (isNil "_idc") exitWith {};
-		private _ctrl = _ctrlGroup controlsGroupCtrl _idc;
-		_ctrl ctrlShow (_cannula isNotEqualTo 0);
+		for "_i" from 0 to 5 do {
+			private _selectionN = _i;
+			private _IVs = _target getVariable ["KJW_MedicalExpansion_Core_IV",[0,0,0,0,0,0]];
+			private _cannula = _IVs#_selectionN;
+			private _idc = [nil,nil,IDC_BODY_ARMLEFT_IV,IDC_BODY_ARMRIGHT_IV,IDC_BODY_LEGLEFT_IV,IDC_BODY_LEGRIGHT_IV] select _selectionN;
+			if (isNil "_idc") then {continue};
+			private _ctrl = _ctrlGroup controlsGroupCtrl _idc;
+			_ctrl ctrlShow (_cannula isNotEqualTo 0);
+		};
 	}
 ] call CBA_fnc_addEventHandler;
 
