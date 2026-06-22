@@ -14,7 +14,7 @@ class CfgWeapons {
 
 	class KJW_MedicalExpansion_500_TransfusionKit: ACE_ItemCore {
 		scope = 2;
-		displayName = "Empty Blood Bag (500ml)";
+		displayName = "Field Transfusion Kit (500ml)";
 		descriptionShort = "Used for taking blood donations";
 		class ItemInfo: CBA_MiscItem_ItemInfo {
 			mass = 0.25;
@@ -22,7 +22,7 @@ class CfgWeapons {
 	};
 	class KJW_MedicalExpansion_250_TransfusionKit: KJW_MedicalExpansion_500_TransfusionKit {
 		scope = 2;
-		displayName = "Empty Blood Bag (250ml)";
+		displayName = "Field Transfusion Kit (250ml)";
 	};
 	class KJW_MedicalExpansion_SampleKit: KJW_MedicalExpansion_500_TransfusionKit {
 		scope = 2;
