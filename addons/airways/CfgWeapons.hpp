@@ -7,6 +7,7 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "Chest Seal";
 		descriptionShort = "Used for treating penetrating chest wounds";
+		picture = QPATHTOF(data\chestseal_icon_ca.paa);
 		class ItemInfo: CBA_MiscItem_ItemInfo {
 			mass = 0.08;
 		};
@@ -17,6 +18,7 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "ARS Needle";
 		descriptionShort = "Used for treating pneumothorax injuries";
+		picture = QPATHTOF(data\arsneedle_icon_ca.paa);
 		class ItemInfo: CBA_MiscItem_ItemInfo {
 			mass = 0.05;
 		};
@@ -27,6 +29,7 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "Chest Drain";
 		descriptionShort = "Used for treating hemopneumothorax injuries";
+		picture = QPATHTOF(data\chestdrain_icon_ca.paa);
 		class ItemInfo: CBA_MiscItem_ItemInfo {
 			mass = 0.05;
 		};
