@@ -1,6 +1,6 @@
 # Core
 
-Medical Expansion: Core serves as the central place for the mod. It provides a feature set of its own right, and as with all Medical Expansion mods, maintains compatibility with KAT: Advanced Medical in addition to the regular ACE Medical for Arma 3, and in the case of Core, adds features exclusive to when KAT:AM (KAM) is loaded.\
+Medical Expansion: Core serves as the central place for the mod. It provides a feature set of its own right, and as with all Medical Expansion mods.\
 \
 Core is able to be run completely standalone from the rest of the Medical Expansion and add a small level of detail to the base ACE Medical system; IV lines, Blood Data and such.\
 \

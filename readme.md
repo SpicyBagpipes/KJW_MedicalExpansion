@@ -15,7 +15,7 @@ The Core module aims to provide frameworks that the other mods can build off of,
 * Cannulation Framework - Configurable cannulae with line occupation.
 * Symptoms Framework - Symptoms of diseases or other illnesses.
 * Centrifuge - Examine blood samples and view their properties for verifying disease diagnoses.
-* Blood Types - Synchronised with KAM Blood Types, with an option for incompatibility.
+* Blood Types - Option for incompatibility.
 * Leave Body Respawn - Allow your medics to continue working on you after your respawn.
     * TODO: Comas - Ensure the AI controlling your previous body do not wake up.
 * PPE - Used by other Medical Expansion mods and has the ability to be used by extended mods.

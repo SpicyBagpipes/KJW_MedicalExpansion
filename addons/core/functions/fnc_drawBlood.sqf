@@ -36,13 +36,7 @@ private _value = switch (true) do {
 
 _value params ["_bloodBag", "_amount"];
 
-if !(GVAR(KAMLoaded)) then {
-	_patient setVariable ["ACE_Medical_bloodVolume",_patientVolume-_amount, true];
-} else {
-	// Thanks KAM...
-	private _volume = _amount*1000;
-	(_patient setVariable ["kat_circulation_bodyFluid", [((_patient getVariable ["kat_circulation_bodyFluid", [2700, 3300, 500, 10000, 6000]]) select 0) - (_volume / 2), ((_patient getVariable ["kat_circulation_bodyFluid", [2700, 3300, 500, 10000, 6000]]) select 1) - (_volume / 2), ((_patient getVariable ["kat_circulation_bodyFluid", [2700, 3300, 500, 10000, 6000]]) select 2), ((_patient getVariable ["kat_circulation_bodyFluid", [2700, 3300, 500, 10000, 6000]]) select 3), ((_patient getVariable ["kat_circulation_bodyFluid", [2700, 3300, 500, 10000, 6000]]) select 4) - _volume], true]);
-};
+_patient setVariable ["ACE_Medical_bloodVolume",_patientVolume-_amount, true];
 
 {
 	private _reduction = -_amount*4; //Negative value.

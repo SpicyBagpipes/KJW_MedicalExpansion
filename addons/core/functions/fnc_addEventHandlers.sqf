@@ -149,16 +149,6 @@ if (hasInterface) then {
 	}
 ] call CBA_fnc_addEventHandler;
 
-if (GVAR(KAMLoaded) && GVAR(kamOverrideBloodGroup)) then {
-	[
-		"kat_circulation_setPreferredBloodType",
-		{
-			params ["_unit"];
-			[_unit] call FUNC(getBloodType);
-		}
-	] call CBA_fnc_addEventHandler;
-};
-
 [
 	"ace_medical_treatment_fullHealLocal",
 	{
@@ -181,7 +171,6 @@ player addEventHandler ["Respawn",{
 [
 	"ace_medical_gui_updateInjuryListGeneral",
 	{
-		if (GVAR(KAMLoaded)) exitWith {};
 		params ["_ctrl", "_target", "_selectionN", "_entries"];
 		private _nonissueColor = [1, 1, 1, 0.33];
 		private _IVs = _target getVariable ["KJW_MedicalExpansion_Core_IV",[0,0,0,0,0,0]];

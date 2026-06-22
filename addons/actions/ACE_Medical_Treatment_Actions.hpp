@@ -1,7 +1,7 @@
 class ACE_Medical_Treatment_Actions {
 	class ApplyTourniquet;
 	class BasicBandage;
-	class ApplyIV: ApplyTourniquet { // Not needed for KAM
+	class ApplyIV: ApplyTourniquet {
 		displayName = "Stage IV Line";
 		displayNameProgress = "Staging IV...";
 		category = "advanced";
@@ -12,7 +12,7 @@ class ACE_Medical_Treatment_Actions {
 		callbackSuccess = QEFUNC(core,addIV);
 		litter[] = {};
 	};
-	class RemoveIV: ApplyIV { // Also not needed for KAM
+	class RemoveIV: ApplyIV {
 		displayName = "Remove IV Line";
 		displayNameProgress = "Removing IV...";
 		items[] = {};
@@ -20,7 +20,7 @@ class ACE_Medical_Treatment_Actions {
 		treatmentTime = "5";
 		callbackSuccess = QEFUNC(core,removeIV);
 	};
-	class PushIV: ApplyIV { // Needed for KAM
+	class PushIV: ApplyIV {
 		displayName = "Push Selected Fluid";
 		displayNameProgress = "Pushing Fluid...";
 		items[] = {};
@@ -29,7 +29,7 @@ class ACE_Medical_Treatment_Actions {
 		callbackSuccess = QEFUNC(core,pushIV);
 		callbackStart = QEFUNC(core,showBloodLabel);
 	};
-	class Transfusion_500: ApplyIV { // Needed for KAM
+	class Transfusion_500: ApplyIV {
 		displayName = "Draw 500mL Blood";
 		displayNameProgress = "Drawing Blood...";
 		items[] = {"KJW_MedicalExpansion_500_TransfusionKit"};
@@ -37,7 +37,7 @@ class ACE_Medical_Treatment_Actions {
 		treatmentTime = "15";
 		callbackSuccess = QEFUNC(core,drawBlood);
 	};
-	class Transfusion_250: ApplyIV { // Needed for KAM
+	class Transfusion_250: ApplyIV {
 		displayName = "Draw 250mL Blood";
 		displayNameProgress = "Drawing Blood...";
 		items[] = {"KJW_MedicalExpansion_250_TransfusionKit"};
@@ -45,7 +45,7 @@ class ACE_Medical_Treatment_Actions {
 		treatmentTime = "10";
 		callbackSuccess = QEFUNC(core,drawBlood);
 	};
-	class Sample_10: ApplyIV { // Needed for KAM
+	class Sample_10: ApplyIV {
 		displayName = "Draw 10mL Blood Sample";
 		displayNameProgress = "Drawing Blood Sample...";
 		items[] = {"KJW_MedicalExpansion_SampleKit"};

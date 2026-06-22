@@ -48,36 +48,6 @@ if (!isMultiplayer || !isPlayer _unit) exitWith {
         PROB_ABNEG
     ];
 
-    if (GVAR(KAMLoaded)) then {
-        if (GVAR(kamOverrideBloodGroup)) then {
-            private _convertedType = switch (_bloodType) do { //[0, 1, 2, 3, 4, 5, 6, 7] -> [O+, O-, A+, A-, B+, B-, AB+, AB-]
-                case 0: {"O"};
-                case 1: {"O_N"};
-                case 2: {"A"};
-                case 3: {"A_N"};
-                case 4: {"B"};
-                case 5: {"B_N"};
-                case 6: {"AB"};
-                case 7: {"AB_N"};
-            };
-            _unit setVariable ["KAT_Circulation_bloodType",_convertedType,true];
-            _unit setVariable ["KAT_Circulation_bloodTypePlayer",_convertedType,true];
-        } else {
-            private _KAMType = [_unit] call kat_circulation_fnc_bloodType;
-            private _newType = switch _KAMType do {
-                case "A": {BLOODTYPE_APOS};
-                case "A_N": {BLOODTYPE_ANEG};
-                case "B": {BLOODTYPE_BPOS};
-                case "B_N": {BLOODTYPE_BNEG};
-                case "O": {BLOODTYPE_OPOS};
-                case "O_N": {BLOODTYPE_ONEG};
-                case "AB": {BLOODTYPE_ABPOS};
-                case "AB_N": {BLOODTYPE_ABNEG};
-            };
-            _type = _newType;
-        };
-    };
-
 	_unit setVariable [QGVAR(bloodType),_bloodType,true];
     
 	_bloodType
@@ -100,35 +70,6 @@ _type = switch (true) do {
     default {BLOODTYPE_OPOS};
 };
 
-if (GVAR(KAMLoaded)) then {
-    if (GVAR(kamOverrideBloodGroup)) then {
-        private _convertedType = switch (_type) do { //[0, 1, 2, 3, 4, 5, 6, 7] -> [O+, O-, A+, A-, B+, B-, AB+, AB-]
-            case 0: {"O"};
-            case 1: {"O_N"};
-            case 2: {"A"};
-            case 3: {"A_N"};
-            case 4: {"B"};
-            case 5: {"B_N"};
-            case 6: {"AB"};
-            case 7: {"AB_N"};
-        };
-        _unit setVariable ["KAT_Circulation_bloodType",_convertedType,true];
-        _unit setVariable ["KAT_Circulation_bloodTypePlayer",_convertedType,true];
-    } else {
-        private _KAMType = [_unit] call kat_circulation_fnc_bloodType;
-        private _newType = switch _KAMType do {
-            case "A": {BLOODTYPE_APOS};
-            case "A_N": {BLOODTYPE_ANEG};
-            case "B": {BLOODTYPE_BPOS};
-            case "B_N": {BLOODTYPE_BNEG};
-            case "O": {BLOODTYPE_OPOS};
-            case "O_N": {BLOODTYPE_ONEG};
-            case "AB": {BLOODTYPE_ABPOS};
-            case "AB_N": {BLOODTYPE_ABNEG};
-        };
-        _type = _newType;
-    };
-};
 _unit setVariable [QGVAR(bloodType),_type,true];
 
 _type

@@ -1,8 +1,6 @@
 # Coding Guidelines
 ---
 ## FAQ:
-#### Q: Should this mod have compatibility with KAM?
-*A:*  **Yes.** You are able to create alternative versions of function overwrites if KAM edits the same thing.
 
 #### Q: What if I want to create a new module?
 *A:* Please refer to KJW or one of his minions before doing so. Modules must be properly planned with a wide feature set that is relevant to the module.

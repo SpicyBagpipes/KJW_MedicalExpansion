@@ -24,14 +24,6 @@ if (!GVAR(ivCapacity)) exitWith {true};
 
 private _bloodBags = _unit getVariable ["ace_medical_ivbags", []];
 private _IVs = _unit getVariable [QGVAR(IV), [0, 0, 0, 0, 0, 0]];
-if (GVAR(KAMLoaded)) then {
-  private _KAMIVs = _unit getVariable ["kat_pharma_IV",[0,0,0,0,0,0]];
-  private _totalIVs = [];
-  {
-    _totalIVs pushBack (_x max _KAMIVs#_forEachIndex);
-  } forEach _IVs;
-  _IVs = _totalIVs;
-};
 private _mainBodyPartIndex = BODYPARTS find toLower _mainBodyPart;
 private _ivBagAmount = count (_bloodBags select {
   _x params ["_bagVolumeRemaining", "_type", "_bodyPartIndex", "_bloodData"];

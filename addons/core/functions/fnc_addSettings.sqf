@@ -73,18 +73,6 @@ private _arr = str [];
 	false // Requires restart
 ] call CBA_fnc_addSetting;
 
-
-[
-	QGVAR(kamOverrideBloodGroup),
-	"CHECKBOX",
-	["Override KAT blood group", "Will override KAT blood group with KJW ME:C blood group if enabled"],
-	["KJW's Medical Expansion", "Miscellaneous"],
-	false, // Default value
-	1, // 1: all clients share the same setting, 2: setting can’t be overwritten (optional, default: 0)
-	{}, // Setting changed code
-	true // Requires restart
-] call CBA_fnc_addSetting;
-
 [
 	QGVAR(doRBCeffects),
 	"CHECKBOX",
