@@ -30,7 +30,7 @@ private _newKey = "";
 
 if (count _fluidData isEqualTo 0 && _addition == "add") exitWith {
 	//Does not exist, create.
-	private _newKey = _classname + "_1";
+	_newKey = _classname + "_1";
 	GVAR(fluidData) set [_newKey, _data];
 	_newKey
 };
@@ -46,7 +46,7 @@ switch _addition do {
 				_id = parseNumber _id;
 				private _newId = _id+1;
 				_newId = str _newId;
-				private _newKey = _classname_+_newId;
+				_newKey = _classname_+_newId;
 				if (_newKey in GVAR(fluidData)) then {
 					//Exists, skip iteration.
 					continue
@@ -55,7 +55,7 @@ switch _addition do {
 				_newKey
 			} else {
 				//this is 1. overwrite 1.
-				private _newKey = _classname + "_1";
+				_newKey = _classname + "_1";
 				GVAR(fluidData) set [_newKey, _data];
 				_newKey
 			};
