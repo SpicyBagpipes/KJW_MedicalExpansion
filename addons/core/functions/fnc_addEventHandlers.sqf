@@ -226,7 +226,8 @@ player addEventHandler ["Respawn",{
             private _isCompatible = [_unit getVariable QGVAR(bloodType),_bloodType] call FUNC(checkBloodTypeCompatibility);
 
 			if (!_isCompatible && GVAR(bloodIncompatibilityEnabled)) then {
-                _bagChangeInLiters = _bagChangeInLiters * -1; // This will now do nothing and needs to be moved to its own function
+				_unit setVariable ["ace_medical_bloodVolume",(_unit getVariable "ace_medical_bloodVolume") - _bagChangeInLiters/100, true];
+                //_bagChangeInLiters = _bagChangeInLiters * -1; // This will now do nothing and needs to be moved to its own function
                 private _roll = random 1;
                 if (_roll < 0.2) then {
                     private _bodyPart = selectRandom ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];

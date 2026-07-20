@@ -37,4 +37,4 @@ private _treatmentType = switch (true) do {
 
 _treatmentTypeJoined = "BloodIV" + _treatmentType;
 
-[_medic, _patient, _bodyPart, _treatmentTypeJoined, objNull, _fluidInfo#0, _fluidUsed] call ace_medical_treatment_fnc_ivBag;
+[_medic, _patient, _bodyPart, _treatmentTypeJoined, _medic, _fluidUsed] call ace_medical_treatment_fnc_ivBag;
